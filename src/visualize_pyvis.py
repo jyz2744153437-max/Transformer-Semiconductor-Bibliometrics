@@ -250,17 +250,23 @@ def write_pyvis_html(network_key, config):
     # Pyvis 对中文 heading 有编码 bug，保存后手动修复标题
     html = output_path.read_text(encoding='utf-8', errors='replace')
     correct_title = f'<h3 style="text-align:center">{config["title"]}</h3>'
-    # Pyvis 生成两个 <center><h1></h1></center>，全部删掉，插入一个正确标题
+    # Pyvis 生成两个 <center><h1></h1></center>，全部删掉，在 <body> 内插入标题
     html = re.sub(r'<center>\s*<h1>.*?</h1>\s*</center>\s*', '', html)
     html = html.replace(
-        '<link',
-        f'<center><h1>{correct_title}</h1></center>\n<link',
+        '<body>',
+        f'<body>\n<center><h1>{correct_title}</h1></center>',
         1,
     )
-    # 去掉 Bootstrap card-body 底部 padding，避免白边遮挡导航按钮
+    # 画布撑满视口、消除底部白边：body flex 布局，网络区自动填满剩余高度
     html = html.replace(
         '</style>',
-        '.card-body{padding:0!important;margin:0!important;}\n.card{border:none!important;}\n</style>',
+        'html,body{height:100%;margin:0;padding:0;overflow:hidden}'
+        'body{display:flex;flex-direction:column}'
+        '.card{flex:1;display:flex;flex-direction:column;width:100%}'
+        '.card-body{flex:1;padding:0!important}'
+        '.card{border:none!important}'
+        '#mynetwork{height:100%!important;float:none!important}'
+        '</style>',
     )
 
     # 注入自定义 HTML tooltip（vis.js 原生 tooltip 只渲染纯文本，被 tipHtml 绕过）

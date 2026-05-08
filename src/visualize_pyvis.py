@@ -254,8 +254,10 @@ def write_pyvis_html(network_key, config):
         f'font-family:Segoe UI,Microsoft YaHei,PingFang SC,sans-serif;'
         f'font-size:17px;font-weight:600;color:#2c3e50;'
         f'letter-spacing:3px;'
-        f'border-bottom:1.5px solid #e2e6ea;'
-        f'background:#fafbfc;flex-shrink:0;">'
+        f'background:rgba(250,251,252,0.75);'
+        f'backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);'
+        f'border-bottom:1px solid rgba(0,0,0,0.06);'
+        f'flex-shrink:0;">'
         f'{config["title"]}</div>'
     )
     # Pyvis 生成两个 <center><h1></h1></center>，全部删掉，在 <body> 内插入标题

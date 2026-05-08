@@ -91,12 +91,16 @@ def build_tooltip(node, metrics, network_key):
     pr = metrics.get('pagerank', 0)
     comm = metrics.get('community', 0)
     return (
-        f'<b>{display}</b><br>'
-        f'社团: {comm}<br>'
-        f'度: {degree}<br>'
-        f'加权度: {wd:.1f}<br>'
-        f'中介中心性: {bet:.4f}<br>'
-        f'PageRank: {pr:.4f}'
+        f'<div style="font-family:Segoe UI,Arial,sans-serif;padding:2px 4px;min-width:180px;">'
+        f'<div style="font-weight:700;font-size:12.5px;color:#1a1a2e;margin-bottom:5px;'
+        f'padding-bottom:4px;border-bottom:1.5px solid #ddd;">{display}</div>'
+        f'<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;font-size:11px;color:#555;">'
+        f'<div>社团 <b style="color:#222">{comm}</b></div>'
+        f'<div>度 <b style="color:#222">{degree}</b></div>'
+        f'<div>加权度 <b style="color:#222">{wd:.1f}</b></div>'
+        f'<div>中介中心性 <b style="color:#222">{bet:.4f}</b></div>'
+        f'<div>PageRank <b style="color:#222">{pr:.4f}</b></div>'
+        f'</div></div>'
     )
 
 

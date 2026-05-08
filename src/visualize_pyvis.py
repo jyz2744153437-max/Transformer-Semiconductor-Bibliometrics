@@ -183,11 +183,11 @@ def write_pyvis_html(network_key, config):
         color = CLUSTER_COLORS[comm % len(CLUSTER_COLORS)]
         size = 10 + 40 * (wd / max(max_wd, 1))
         label = beautify_node_name(node, network_key)
-        title = build_tooltip(node, m, network_key)
+        tip = build_tooltip(node, m, network_key)
         net.add_node(
             node,
             label=label,
-            title=title,
+            tipHtml=tip,       # 自定义属性，绕过 vis.js 原生纯文本 tooltip
             size=size,
             color=color,
             borderWidth=1,
@@ -204,12 +204,20 @@ def write_pyvis_html(network_key, config):
     for source, target, data in strongest:
         w = data.get('weight', 1)
         width = 0.5 + 4.5 * (w / max_edge_w)
+        edge_tip = (
+            f'<div style="font-weight:600;font-size:12px;color:#1a1a2e;'
+            f'margin-bottom:3px;">{beautify_node_name(source, network_key)}'
+            f' <span style="color:#999;font-weight:400;">↔</span> '
+            f'{beautify_node_name(target, network_key)}</div>'
+            f'<div style="font-size:11px;color:#666;">'
+            f'权重 <b style="color:#333">{w:.1f}</b></div>'
+        )
         net.add_edge(
             source, target,
             value=w,
             width=width,
             color='rgba(140,152,164,0.4)',
-            title=f'{beautify_node_name(source, network_key)} ↔ {beautify_node_name(target, network_key)}<br>权重: {w:.1f}',
+            tipHtml=edge_tip,
         )
 
     # 物理模拟参数
@@ -249,7 +257,7 @@ def write_pyvis_html(network_key, config):
         html,
     )
 
-    # 注入自定义 HTML tooltip（vis.js 默认只渲染纯文本）
+    # 注入自定义 HTML tooltip（vis.js 原生 tooltip 只渲染纯文本，被 tipHtml 绕过）
     custom_js = (
         '<script>'
         'var tip=document.createElement("div");'
@@ -257,15 +265,21 @@ def write_pyvis_html(network_key, config):
         'border:1px solid #d0d5dd;border-radius:6px;padding:6px 10px;'
         'font-family:Segoe UI,Arial,sans-serif;font-size:12px;color:#333;'
         'box-shadow:0 2px 8px rgba(0,0,0,0.12);pointer-events:none;'
-        'z-index:9999;max-width:240px;";'
+        'z-index:9999;max-width:260px;";'
         'document.body.appendChild(tip);'
+        'function showTip(html,evt){'
+        'tip.innerHTML=html;tip.style.display="block";'
+        'tip.style.left=(evt.clientX+16)+"px";'
+        'tip.style.top=(evt.clientY-10)+"px";}'
+        'function hideTip(){tip.style.display="none";}'
         'network.on("hoverNode",function(p){'
         'var d=nodes.get(p.node);'
-        'if(d&&d.title){tip.innerHTML=d.title;tip.style.display="block";'
-        'tip.style.left=(p.event.clientX+16)+"px";'
-        'tip.style.top=(p.event.clientY-10)+"px";}'
-        '});'
-        'network.on("blurNode",function(){tip.style.display="none";});'
+        'if(d&&d.tipHtml)showTip(d.tipHtml,p.event);});'
+        'network.on("hoverEdge",function(p){'
+        'var d=edges.get(p.edge);'
+        'if(d&&d.tipHtml)showTip(d.tipHtml,p.event);});'
+        'network.on("blurNode",hideTip);'
+        'network.on("blurEdge",hideTip);'
         '</script>'
     )
     html = html.replace('</body>', f'{custom_js}\n</body>')

@@ -250,14 +250,14 @@ def write_pyvis_html(network_key, config):
     # Pyvis 对中文 heading 有编码 bug，保存后手动修复标题
     html = output_path.read_text(encoding='utf-8', errors='replace')
     correct_title = (
-        f'<div style="text-align:center;padding:10px 0 8px;'
+        f'<div style="position:absolute;top:0;left:0;right:0;z-index:10;'
+        f'text-align:center;padding:10px 0 8px;'
         f'font-family:Segoe UI,Microsoft YaHei,PingFang SC,sans-serif;'
         f'font-size:17px;font-weight:600;color:#2c3e50;'
         f'letter-spacing:3px;'
-        f'background:rgba(250,251,252,0.75);'
+        f'background:rgba(250,251,252,0.72);'
         f'backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);'
-        f'border-bottom:1px solid rgba(0,0,0,0.06);'
-        f'flex-shrink:0;">'
+        f'border-bottom:1px solid rgba(0,0,0,0.06);">'
         f'{config["title"]}</div>'
     )
     # Pyvis 生成两个 <center><h1></h1></center>，全部删掉，在 <body> 内插入标题
@@ -267,15 +267,15 @@ def write_pyvis_html(network_key, config):
         f'<body>\n{correct_title}',
         1,
     )
-    # 画布撑满视口、消除底部白边：body flex 布局，网络区自动填满剩余高度
+    # 画布撑满视口，标题浮动在画布上方（磨砂玻璃透出下方彩色节点）
     html = html.replace(
         '</style>',
         'html,body{height:100%;margin:0;padding:0;overflow:hidden}'
-        'body{display:flex;flex-direction:column}'
+        'body{position:relative;display:flex;flex-direction:column}'
         '.card{flex:1;display:flex;flex-direction:column;width:100%}'
         '.card-body{flex:1;padding:0!important}'
         '.card{border:none!important}'
-        '#mynetwork{height:100%!important;float:none!important}'
+        '#mynetwork{height:100%!important;float:none!important;border:none!important}'
         '</style>',
     )
 

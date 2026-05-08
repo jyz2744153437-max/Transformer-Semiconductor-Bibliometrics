@@ -83,24 +83,18 @@ def beautify_node_name(raw, network_key):
 
 
 def build_tooltip(node, metrics, network_key):
-    """构建 Pyvis 节点悬停提示（HTML 格式）。"""
-    display = beautify_node_name(node, network_key)
+    """构建 Pyvis 节点悬停提示（仅用 <br>/<b>，复杂 CSS 在 vis.js 中不渲染）。"""
     degree = metrics.get('degree', 0)
     wd = metrics.get('weighted_degree', 0)
     bet = metrics.get('betweenness', 0)
     pr = metrics.get('pagerank', 0)
     comm = metrics.get('community', 0)
     return (
-        f'<div style="font-family:Segoe UI,Arial,sans-serif;padding:2px 4px;min-width:180px;">'
-        f'<div style="font-weight:700;font-size:12.5px;color:#1a1a2e;margin-bottom:5px;'
-        f'padding-bottom:4px;border-bottom:1.5px solid #ddd;">{display}</div>'
-        f'<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;font-size:11px;color:#555;">'
-        f'<div>社团 <b style="color:#222">{comm}</b></div>'
-        f'<div>度 <b style="color:#222">{degree}</b></div>'
-        f'<div>加权度 <b style="color:#222">{wd:.1f}</b></div>'
-        f'<div>中介中心性 <b style="color:#222">{bet:.4f}</b></div>'
-        f'<div>PageRank <b style="color:#222">{pr:.4f}</b></div>'
-        f'</div></div>'
+        f'社团: <b>{comm}</b><br>'
+        f'度: <b>{degree}</b>'
+        f'  |  加权度: <b>{wd:.1f}</b><br>'
+        f'中介中心性: <b>{bet:.4f}</b>'
+        f'  |  PageRank: <b>{pr:.4f}</b>'
     )
 
 

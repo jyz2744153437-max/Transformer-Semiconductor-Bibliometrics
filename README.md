@@ -106,7 +106,9 @@ Transformer-Semiconductor-Bibliometrics/
 │   ├── network_metrics_*.csv     # 网络指标
 │   ├── keyword_bursts.csv        # 突现检测结果
 │   ├── keyword_burst_report.md   # 突现分析报告
-│   ├── *_network.html            # 交互式 Plotly 网络图（4 种网络 × 可拖拽缩放悬停）
+│   ├── *_network.html            # 交互式 Plotly 网络图（4 种网络 × 缩放悬停图例筛选）
+│   ├── *_network_pyvis.html      # 交互式 Pyvis 网络图（4 种网络 × 拖拽物理模拟点击高亮）
+│   ├── network_readme.md         # 两种版本对比说明
 │   ├── bibliometrics_report.html # 综合文献计量报告（模板标准产出）
 │   └── network_qc_summary.csv    # 网络质量汇总
 ├── Visual output/                # 可视化产出
@@ -117,6 +119,7 @@ Transformer-Semiconductor-Bibliometrics/
 │   ├── burst_visualize.py        # 突现可视化
 │   ├── create_screening.py       # 筛选记录生成
 │   └── metrics_calculator.*      # 指标计算
+│   └── visualize_pyvis.py        # Pyvis 交互式网络图生成
 ├── paper/                        # 论文草稿
 │   └── manuscript_v1.md          # Mini Review 初稿
 ├── 质量基准/                     # 项目质量参照标准
@@ -203,23 +206,23 @@ Kleinberg 算法识别 25 个突现词，2024 年是关键拐点——vision tra
 ### 聚类时间线演化图
 ![聚类时间线演化图](Visual%20output/outputs_timeline_view.png)
 
-### 交互式网络图（Plotly）
+### 交互式网络图
 
-以下 4 个 HTML 文件可在浏览器中**拖拽、缩放、悬停查看节点指标**（度、中介中心性、PageRank、所属社团等），比静态图片更适合深入分析：
+以下 4 种网络各提供**两个版本**：Plotly 版（课程模板标准）和 Pyvis 版（增强交互体验）。详见 [交互式网络图说明](outputs/network_readme.md)。
 
-| 网络类型 | 文件 | 说明 |
-|----------|------|------|
-| 关键词共现 | [outputs/keyword_cooccurrence_network.html](outputs/keyword_cooccurrence_network.html) | 两关键词同时出现则连线，球大=高频，同色=同社团，**识别研究热点** |
-| 共被引网络 | [outputs/co_citation_network.html](outputs/co_citation_network.html) | 两篇文献被同一篇引用则连线，**揭示知识基础**——Vaswani(2017)、ViT(2021)、Swin(2021) 是三大基石 |
-| 文献耦合 | [outputs/bibliographic_coupling_network.html](outputs/bibliographic_coupling_network.html) | 两篇文献引用了相同的参考文献则连线，**发现研究前沿** |
-| 合作网络 | [outputs/coauthorship_network.html](outputs/coauthorship_network.html) | 两作者共同发表论文则连线，**识别核心团队与机构** |
+| 网络类型 | Plotly 版（课程标准） | Pyvis 版（增强交互） | 解读方向 |
+|----------|------|------|------|
+| 关键词共现 | [在线交互页](https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/outputs/keyword_cooccurrence_network.html) | [在线交互页](https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/outputs/keyword_cooccurrence_network_pyvis.html) | 识别研究热点，同色=同主题聚类 |
+| 共被引网络 | [在线交互页](https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/outputs/co_citation_network.html) | [在线交互页](https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/outputs/co_citation_network_pyvis.html) | 揭示知识基础——球大=奠基文献 |
+| 文献耦合 | [在线交互页](https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/outputs/bibliographic_coupling_network.html) | [在线交互页](https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/outputs/bibliographic_coupling_network_pyvis.html) | 发现研究前沿 |
+| 合作网络 | [在线交互页](https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/outputs/coauthorship_network.html) | [在线交互页](https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/outputs/coauthorship_network_pyvis.html) | 识别核心团队与机构 |
 
-> **怎么玩**：鼠标拖拽移动节点、滚轮缩放、悬停任意节点弹出完整指标卡片。边缘小球往往是新兴方向，中间密集团簇是核心研究集群。
+> **Plotly 版**：滚轮缩放、悬停弹出指标卡片、点击图例筛选社团。**Pyvis 版**：节点可拖拽、物理模拟自动回弹、点击高亮邻居、Ctrl+F 搜索节点名、右下角导航按钮。
 
 | 其他产出 | 文件 | 状态 |
 |---|---|---|
-| 三阶段技术演进解读 | Visual output/三阶段技术演进.html | 已生成 |
-| 项目展示页面 | 项目展示.html | 在线 |
+| 三阶段技术演进解读 | [在线页面](https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/Visual%20output/%E4%B8%89%E9%98%B6%E6%AE%B5%E6%8A%80%E6%9C%AF%E6%BC%94%E8%BF%9B.html) | 已生成 |
+| 项目展示页面 | [在线页面](https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/) | 在线 |
 
 ## 7. 快速复现
 

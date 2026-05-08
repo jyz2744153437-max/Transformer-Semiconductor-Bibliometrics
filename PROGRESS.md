@@ -130,3 +130,5 @@
 | 6.10 | 大文件清除 | git filter-branch 移除 138MB FET被引文献.zip，修复 GitHub push 被拒 |
 | 6.11 | gh-pages 部署更新 | 最新版项目展示页部署至 GitHub Pages |
 | 6.12 | CHANGELOG/README 同步 | 项目结构新增质量基准/、交互式网络图产出 |
+| 6.13 | 四个交互网络重写 | 重写 `src/visualize_interactive.py`，重新生成 4 个 Plotly HTML（84/89/91/106 节点） |
+| 6.14 | 在线链接修复 | README 与 项目展示.html 改为 GitHub Pages 在线地址，避免点进源码页 |

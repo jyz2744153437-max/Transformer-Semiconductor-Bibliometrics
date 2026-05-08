@@ -249,12 +249,20 @@ def write_pyvis_html(network_key, config):
 
     # Pyvis 对中文 heading 有编码 bug，保存后手动修复标题
     html = output_path.read_text(encoding='utf-8', errors='replace')
-    correct_title = f'<h3 style="text-align:center">{config["title"]}</h3>'
+    correct_title = (
+        f'<div style="text-align:center;padding:10px 0 8px;'
+        f'font-family:Segoe UI,Microsoft YaHei,PingFang SC,sans-serif;'
+        f'font-size:17px;font-weight:600;color:#2c3e50;'
+        f'letter-spacing:3px;'
+        f'border-bottom:1.5px solid #e2e6ea;'
+        f'background:#fafbfc;flex-shrink:0;">'
+        f'{config["title"]}</div>'
+    )
     # Pyvis 生成两个 <center><h1></h1></center>，全部删掉，在 <body> 内插入标题
     html = re.sub(r'<center>\s*<h1>.*?</h1>\s*</center>\s*', '', html)
     html = html.replace(
         '<body>',
-        f'<body>\n<center><h1>{correct_title}</h1></center>',
+        f'<body>\n{correct_title}',
         1,
     )
     # 画布撑满视口、消除底部白边：body flex 布局，网络区自动填满剩余高度

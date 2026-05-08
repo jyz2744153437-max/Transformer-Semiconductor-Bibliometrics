@@ -169,7 +169,7 @@ def write_pyvis_html(network_key, config):
         directed=False,
         notebook=False,
     )
-    net.heading = f'<h3 style="text-align:center">{config["title"]}</h3>'
+    # 不设 heading——Pyvis 对中文有编码 bug，保存后手动修复
 
     # 添加节点
     for node in graph.nodes():
@@ -234,6 +234,17 @@ def write_pyvis_html(network_key, config):
 
     output_path = Path(f'outputs/{network_key}_network_pyvis.html')
     net.save_graph(str(output_path))
+
+    # Pyvis 对中文 heading 有编码 bug，保存后手动修复标题
+    html = output_path.read_text(encoding='utf-8', errors='replace')
+    correct_title = f'<h3 style="text-align:center">{config["title"]}</h3>'
+    # Pyvis 生成 <center><h1></h1></center>（空标题），替换为正确中文
+    html = re.sub(
+        r'<center>\s*<h1>.*?</h1>\s*</center>',
+        f'<center><h1>{correct_title}</h1></center>',
+        html,
+    )
+    output_path.write_text(html, encoding='utf-8')
 
     print(
         f'OK {output_path} | nodes={graph.number_of_nodes()} '

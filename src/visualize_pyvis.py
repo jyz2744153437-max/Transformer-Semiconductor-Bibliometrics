@@ -250,11 +250,13 @@ def write_pyvis_html(network_key, config):
     # Pyvis 对中文 heading 有编码 bug，保存后手动修复标题
     html = output_path.read_text(encoding='utf-8', errors='replace')
     correct_title = f'<h3 style="text-align:center">{config["title"]}</h3>'
-    # Pyvis 生成 <center><h1></h1></center>（空标题），替换为正确中文
-    html = re.sub(
-        r'<center>\s*<h1>.*?</h1>\s*</center>',
-        f'<center><h1>{correct_title}</h1></center>',
-        html,
+    # Pyvis 生成两个 <center><h1></h1></center>，先全部删掉，再插入一个正确标题
+    html = re.sub(r'<center>\s*<h1>.*?</h1>\s*</center>', '', html)
+    # 在第一个 <link 之前插入标题（Pyvis HTML 的 head/body 分界处）
+    html = html.replace(
+        '<link',
+        f'<center><h1>{correct_title}</h1></center>\n<link',
+        1,
     )
 
     # 注入自定义 HTML tooltip（vis.js 原生 tooltip 只渲染纯文本，被 tipHtml 绕过）

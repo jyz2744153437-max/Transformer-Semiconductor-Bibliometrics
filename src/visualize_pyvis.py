@@ -83,18 +83,24 @@ def beautify_node_name(raw, network_key):
 
 
 def build_tooltip(node, metrics, network_key):
-    """构建 Pyvis 节点悬停提示（仅用 <br>/<b>，复杂 CSS 在 vis.js 中不渲染）。"""
+    """构建节点悬停提示（HTML 卡片，需配合自定义 tooltip JS 渲染）。"""
+    display = beautify_node_name(node, network_key)
     degree = metrics.get('degree', 0)
     wd = metrics.get('weighted_degree', 0)
     bet = metrics.get('betweenness', 0)
     pr = metrics.get('pagerank', 0)
     comm = metrics.get('community', 0)
     return (
-        f'社团: <b>{comm}</b><br>'
-        f'度: <b>{degree}</b>'
-        f'  |  加权度: <b>{wd:.1f}</b><br>'
-        f'中介中心性: <b>{bet:.4f}</b>'
-        f'  |  PageRank: <b>{pr:.4f}</b>'
+        f'<div style="font-weight:600;font-size:12px;color:#1a1a2e;'
+        f'margin-bottom:4px;padding-bottom:4px;'
+        f'border-bottom:1px solid #e0e0e0;">{display}</div>'
+        f'<div style="font-size:11px;color:#666;line-height:1.6;">'
+        f'社团 <b style="color:#333">{comm}</b><br>'
+        f'度 <b style="color:#333">{degree}</b>'
+        f' <span style="color:#ccc;">|</span> 加权度 <b style="color:#333">{wd:.1f}</b><br>'
+        f'中介中心性 <b style="color:#333">{bet:.4f}</b>'
+        f' <span style="color:#ccc;">|</span> PageRank <b style="color:#333">{pr:.4f}</b>'
+        f'</div>'
     )
 
 
@@ -242,6 +248,28 @@ def write_pyvis_html(network_key, config):
         f'<center><h1>{correct_title}</h1></center>',
         html,
     )
+
+    # 注入自定义 HTML tooltip（vis.js 默认只渲染纯文本）
+    custom_js = (
+        '<script>'
+        'var tip=document.createElement("div");'
+        'tip.style.cssText="position:fixed;display:none;background:#fff;'
+        'border:1px solid #d0d5dd;border-radius:6px;padding:6px 10px;'
+        'font-family:Segoe UI,Arial,sans-serif;font-size:12px;color:#333;'
+        'box-shadow:0 2px 8px rgba(0,0,0,0.12);pointer-events:none;'
+        'z-index:9999;max-width:240px;";'
+        'document.body.appendChild(tip);'
+        'network.on("hoverNode",function(p){'
+        'var d=nodes.get(p.node);'
+        'if(d&&d.title){tip.innerHTML=d.title;tip.style.display="block";'
+        'tip.style.left=(p.event.clientX+16)+"px";'
+        'tip.style.top=(p.event.clientY-10)+"px";}'
+        '});'
+        'network.on("blurNode",function(){tip.style.display="none";});'
+        '</script>'
+    )
+    html = html.replace('</body>', f'{custom_js}\n</body>')
+
     output_path.write_text(html, encoding='utf-8')
 
     print(

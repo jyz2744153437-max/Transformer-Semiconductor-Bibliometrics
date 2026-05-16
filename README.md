@@ -262,8 +262,6 @@ python run_pipeline.py
 | DeepSeek-v4-pro | 代码生成与优化 |
 | GLM-5.1 | 辅助分析 |
 | GPT-5.4 | 辅助分析 |
-| NanoBanana 2 | AI 图片生成 |
-| GPT Image 2 | AI 图片生成 |
 
 ## 10. 参考文献
 

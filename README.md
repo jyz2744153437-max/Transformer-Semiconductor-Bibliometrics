@@ -2,6 +2,8 @@
 
 > **TL;DR**：2015-2025 年，Transformer 架构在半导体制造领域的研究经历了"传统硬件主导→AI 方法渗透→Transformer 大爆发"三阶段技术演进。中国以 260 篇（40.4%）断层式领先，但奠基性工作仍由非中国机构完成。2024 年是关键历史拐点——vision transformers、ViT、SEM 等 6 个术语同步突现。前沿正从"已知缺陷分类"向"未知异常检测"升级。
 
+> **当前状态**：M3 终稿阶段（2026-05-16）。图谱分析已完成，L21-22 写作模块 8 项过程产出已补齐，manuscript 已具备 IMRAD 结构。下一步：精排期末 PPT、终稿润色。
+
 ## 1. 项目简介
 
 本项目基于 Web of Science 核心合集，运用 CiteSpace 文献计量工具，系统分析 Transformer 架构在半导体制造领域的研究热点、知识基础与前沿趋势。
@@ -65,7 +67,7 @@ NOT TS=("power transformer" OR "voltage" OR "current transformer"
 | 时间线分析 | CiteSpace (Timeline View) | 展示聚类演变 |
 
 - CiteSpace 参数：g-index k=25，Pathfinder 剪枝，LLR 聚类算法
-- 全量集（643 篇）作为 CiteSpace 输入，DL 纯净集（147 篇）作为核心解读对象
+- DL 纯净集（147 篇）作为 CiteSpace 全部图谱与 Python 网络分析的核心输入，全量集（643 篇）仅用于国家/机构分布等宏观统计
 - 方法学详见 [reports/methodology.md](reports/methodology.md)
 
 ## 4. 项目结构

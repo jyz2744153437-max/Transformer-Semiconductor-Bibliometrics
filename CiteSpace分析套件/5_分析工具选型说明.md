@@ -6,4 +6,4 @@
 | CiteSpace | GUI层 | 6.4.1 (Standard) | 聚类重叠 | 主方案 |
 | ChatGPT | Agent层 | GPT-4o | 术语幻觉 | 辅助解释 |
 
-**选择理由**：CiteSpace 6.4.1 支持 LLR 算法，能有效处理 643 条半导体文献的突现词检测。
+**选择理由**：CiteSpace 6.4.1 支持 LLR 算法，能有效处理 DL 纯净集 147 篇文献的共被引与突现分析。

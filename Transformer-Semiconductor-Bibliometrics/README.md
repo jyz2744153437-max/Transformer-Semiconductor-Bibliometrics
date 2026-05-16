@@ -65,7 +65,7 @@ NOT TS=("power transformer" OR "voltage" OR "current transformer"
 | 时间线分析 | CiteSpace (Timeline View) | 展示聚类演变 |
 
 - CiteSpace 参数：g-index k=25，Pathfinder 剪枝，LLR 聚类算法
-- 全量集（643 篇）作为 CiteSpace 输入，DL 纯净集（147 篇）作为核心解读对象
+- DL 纯净集（147 篇）作为 CiteSpace 全部图谱与 Python 网络分析的核心输入，全量集（643 篇）仅用于国家/机构分布等宏观统计
 - 方法学详见 [reports/methodology.md](reports/methodology.md)
 
 ## 4. 项目结构

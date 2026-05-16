@@ -72,6 +72,57 @@
 
 ## 自检结论
 
-- **通过项**：25/26（96.2%）
 - **注意项**：1 项（自引偏差，影响有限）
 - **整体评级**：A 级（满足 L19-L20 全部核心要求）
+
+---
+
+## 七、【L21-L22 新增】写作质量自检
+
+### 7.1 综述类型与方法透明
+
+| # | 检查项 | 标准 | 状态 | 位置 |
+|---|--------|------|------|------|
+| 33 | 综述类型声明 | 明确为文献计量型 Review | ✅ | reports/review_type_statement.md |
+| 34 | 方法 10 项透明清单 | 数据库/检索式/日期/时间/类型/纳入/排除/去重/工具/参数 | ✅ | reports/methods_draft.md §2.1 |
+| 35 | 双数据集口径 | Methods 开头独立小节说明 643 与 147 各自用途 | ✅ | paper/manuscript_v1.md §2.1.1 |
+| 36 | 各图表标注数据口径 | Results 各节标注基于全量还是 DL 纯净集 | ✅ | manuscript + results_paragraph_v1.md |
+
+### 7.2 证据链与图表规范
+
+| # | 检查项 | 标准 | 状态 | 位置 |
+|---|--------|------|------|------|
+| 37 | RQ-方法-图表映射 | 每个 RQ 对应明确的分析方法和图表 | ✅ | reports/method_result_map.csv |
+| 38 | 证据链模型表 | Claim/Evidence/Lit/Interpretation/Boundary 五列 | ✅ | reports/claim_evidence_table.csv |
+| 39 | 图注 7 要素 | 对象/数据源/时间/分析单位/工具版本/阈值/视觉元素 | ✅ | reports/results_paragraph_v1.md |
+| 40 | 每图边界限制句 | "不能说明..." 或 "需注意..." | ✅ | results_paragraph_v1.md 每段结尾 |
+
+### 7.3 写作规范
+
+| # | 检查项 | 标准 | 状态 | 位置 |
+|---|--------|------|------|------|
+| 41 | IMRAD 结构完整 | Introduction-Methods-Results-Discussion-Conclusion | ✅ | paper/manuscript_v1.md |
+| 42 | Introduction 四步骨架 | 背景→已有研究→缺口→本文目标+RQ | ✅ | reports/introduction_skeleton.md |
+| 43 | Results 段落结构 | Claim→图号→指标→代表文献→解释→边界 | ✅ | reports/results_paragraph_v1.md |
+| 44 | Discussion 趋势总结 | 基于证据指出方向，不含强立场预测 | ✅ | manuscript §4 |
+| 45 | 不含过度推断 | 无"必将""一定""取代""已经成为主流" | ✅ | 全文搜索通过 |
+| 46 | Conclusion 要素齐全 | 主要发现/贡献/局限性 | ✅ | manuscript §5 |
+
+### 7.4 数据口径一致性
+
+| # | 检查项 | 标准 | 状态 | 说明 |
+|---|--------|------|------|------|
+| 47 | 发文趋势数据口径 | 全量 643 + DL 纯净 147 双线 | ✅ | manuscript §3.1 |
+| 48 | 国家/机构排名数据口径 | 全量 643 | ✅ | manuscript §3.2, §3.3 |
+| 49 | CiteSpace 图谱数据口径 | DL 纯净 147 | ✅ | manuscript §3.4-3.7 |
+| 50 | Python 网络分析数据口径 | DL 纯净 147 | ✅ | manuscript §3.8 |
+
+---
+
+## 自检结论（更新）
+
+- **图谱/数据通过项**：25/26（96.2%）
+- **写作质量通过项**：18/18（100%）
+- **注意项**：1 项（自引偏差，影响有限）
+- **整体评级**：A+ 级（满足 L1-L22 全部核心要求）
+- **更新日期**：2026-05-16

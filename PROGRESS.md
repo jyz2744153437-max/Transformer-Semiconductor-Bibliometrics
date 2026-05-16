@@ -114,6 +114,21 @@
 
 ---
 
+## 2026-05-16 课件更新应对与写作模块补齐
+
+| # | 事项 | 产出 |
+|---|---|---|
+| 16.1 | 课件 L21-22 阅读与评估 | 识别 8 项写作过程产出 + 方法透明 10 项清单 + 证据链模型等新要求 |
+| 16.2 | 质量基准/课程要求细则更新 | 新增 L21-22 章节（综述类型、IMRAD、10 项清单、图注 7 要素、证据链等） |
+| 16.3 | L21-22 写作过程产出文件 | 8 个文件全部创建：review_type_statement.md、research_questions.md、introduction_skeleton.md、methods_draft.md、prisma_flowchart.md（已有）、method_result_map.csv、claim_evidence_table.csv、results_paragraph_v1.md |
+| 16.4 | 教师反馈应对：双数据集口径 | manuscript §2.1.1 新增独立小节 + 表格 + 口径原则说明；修正 CiteSpace 数据口径为 DL 纯净 147（非全量 643） |
+| 16.5 | 分析方法-数据口径映射 | results_paragraph_v1.md 每段标注数据口径；claim_evidence_table.csv 含 8 条证据链 |
+| 16.6 | 分析报告 v2 更新 | 新增第十一节 L21-22 写作要求对照评估（综合 89/100） |
+| 16.7 | QC Checklist 扩展 | 新增第七节写作质量自检（18 项检查，全部通过） |
+| 16.8 | 经验更新 | 记录双数据集口径规范、CiteSpace 数据口径确认 |
+
+---
+
 ## 2026-05-06 分析报告问题全面修复
 
 | # | 事项 | 产出 |

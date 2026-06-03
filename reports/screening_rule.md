@@ -17,7 +17,7 @@
 | **DL Topic Filter** | **语义筛选** | **147** | **496** | 排除电力电子变压器论文 |
 | Included | 纳入分析 | **643 (全集) / 147 (DL 集)** | — | — |
 
-> **DL 主题筛选说明**：原始 643 篇中包含大量电力电子/射频电路领域的 "transformer"（电子变压器、耦合变压器）论文，与深度学习 Transformer 架构同名异义。2026-05-03 新增语义筛选：识别 "attention mechanism"、"vision transformer"、"deep learning" 等 DL 特征词，排除 "power amplifier"、"MMIC"、"DC-DC"、"Doherty" 等电力电子术语，最终保留 147 篇 DL 纯净集。兩套数据并行使用——全集用于 CiteSpace 图谱分析，DL 集用于核心结论与参考文献。
+> **DL 主题筛选说明**：原始 643 篇中包含大量电力电子/射频电路领域的 "transformer"（电子变压器、耦合变压器）论文，与深度学习 Transformer 架构同名异义。2026-05-03 新增语义筛选：识别 "attention mechanism"、"vision transformer"、"deep learning" 等 DL 特征词，排除 "power amplifier"、"MMIC"、"DC-DC"、"Doherty" 等电力电子术语，最终保留 147 篇 DL 纯净集。两套数据并行使用——**643 全量集仅用于宏观统计与检索边界说明，147 DL 纯净集用于 CiteSpace 核心图谱与正式结论。**
 
 ---
 

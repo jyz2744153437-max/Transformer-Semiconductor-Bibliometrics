@@ -9,8 +9,7 @@ import numpy as np
 from scipy.stats import poisson
 
 SOURCE_FILES = [
-    'download_1-500.txt',
-    'download_501-643.txt',
+    'download_1-147.txt',
 ]
 
 
@@ -68,7 +67,7 @@ def parse_wos_file(path):
 
 
 def parse_wos_dir(dir_path):
-    """只解析全量主数据集，避免混入 DL 纯净集导出文件。"""
+    """默认解析 DL 纯净集，作为本地突现复核脚本的正式输入。"""
     all_records = []
     for filename in SOURCE_FILES:
         txt_file = Path(dir_path) / filename
@@ -246,7 +245,7 @@ def main():
     output_dir = Path(__file__).parent.parent / 'outputs'
     output_dir.mkdir(exist_ok=True)
 
-    print('解析 WoS 数据...')
+    print('解析 WoS 数据（DL 纯净集 / Python 复核）...')
     records = parse_wos_dir(data_dir)
     print(f'共 {len(records)} 条文献')
 

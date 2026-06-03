@@ -3,7 +3,7 @@
 > 生成时间：2026-05-08
 > 方法：四准则交叉验证（被引次数、突现强度、中介中心性、Sigma 值）
 > Sigma 计算公式：σ = (Betweenness + 1) × (Weighted Degree / Max Weighted Degree)
-> 数据来源：DL 纯净集 147 篇，共被引网络（89 节点，200 边）
+> 数据来源：DL 纯净集 147 篇；正式共被引图谱为 CiteSpace 网络（N=383, E=1,262），本文使用其中派生的 Python 压缩子图（89 节点，200 边）进行交互排序与里程碑辅助识别
 
 ---
 
@@ -32,7 +32,7 @@
 
 ### 准则②：突现强度（Burst Strength）
 
-Python Kleinberg 算法在 DL 纯净集上检测到的突现词（strength=2）包括：transformers(2023-2025)、deep learning(2024-2025)、vision transformer(2025)、anomaly detection(2025)。这些突现词指向 2023-2025 年 Transformer 在半导体领域的爆发期，验证了 Vaswani(2017)→ViT(2021)→Wei(2022) 的传导链。
+Python Kleinberg 算法在 DL 纯净集上的复核结果显示：`transformer/transformers`、`deep learning`、`vision transformer`、`anomaly detection` 等词在 2024-2025 年集中活跃。该结果主要用于辅助核对趋势方向；正式突现词统计仍以 CiteSpace 导出结果为准。
 
 ### 准则③：中介中心性（Betweenness Centrality）
 

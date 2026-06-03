@@ -1,19 +1,21 @@
 # 关键词突现检测报告
 
-> 基于 Kleinberg 突现检测算法
+> 基于 Kleinberg 突现检测算法（Python 复核口径）
 > 创建日期：2026-06-03
 
 ---
 
 ## 1. 突现检测方法
 
+> 说明：本报告基于 `src/burst_detection.py` 对 **DL 纯净集 147 篇** 的本地 Python 复核结果生成，主要用于趋势辅助核对。正式答辩口径中的突现词数量仍以 CiteSpace 导出结果为准。
+
 | 项目 | 说明 |
 |---|---|
 | 算法 | Kleinberg Burst Detection |
 | 参数 | s=2, γ=1 |
 | 最小频次 | 5 |
-| 原始检测结果 | 97 个突现 |
-| 核心展示口径 | Top 25 核心突现词（用于时间线图与答辩展示） |
+| Python 复核结果 | 17 个突现 |
+| 正式答辩口径 | CiteSpace 突现图谱（DL 纯净集 147 篇） |
 
 ---
 
@@ -23,113 +25,32 @@
 
 | 关键词 | 突现区间 | 强度 | 总频次 |
 |---|---|---|---|
-| wide-band | 2015-2015 | 2 | 9 |
-| transformer feedback | 2015-2015 | 2 | 5 |
-| converters | 2017-2018 | 2 | 6 |
-| cmos | 2015-2015 | 1 | 41 |
-| compact | 2015-2015 | 1 | 7 |
-| monolithic microwave integrated circuit (mmic) | 2015-2015 | 1 | 9 |
-| silicon | 2015-2016 | 1 | 14 |
-| gallium arsenide | 2015-2015 | 1 | 7 |
-| impedance matching | 2015-2015 | 1 | 12 |
-| load modulation | 2015-2015 | 1 | 5 |
-| receiver | 2015-2017 | 1 | 6 |
-| power-amplifier | 2015-2015 | 1 | 7 |
-| gallium nitride | 2015-2015 | 1 | 6 |
-| amplifier | 2015-2016 | 1 | 14 |
-| power transformers | 2015-2015 | 1 | 5 |
-| doherty | 2015-2015 | 1 | 5 |
-| gallium nitride (gan) | 2015-2016 | 1 | 6 |
-| silicon carbide | 2015-2018 | 1 | 5 |
-| linearity | 2015-2015 | 1 | 5 |
-| dc/dc converter | 2015-2015 | 1 | 6 |
-| transceiver | 2015-2017 | 1 | 8 |
-| mechanism | 2016-2016 | 1 | 6 |
-| converter | 2016-2016 | 1 | 22 |
-| couplers | 2016-2016 | 1 | 5 |
-| technology | 2016-2016 | 1 | 5 |
-| mmic | 2017-2019 | 1 | 8 |
-| chip | 2017-2017 | 1 | 7 |
-| resistance | 2017-2017 | 1 | 10 |
-| mixers | 2017-2017 | 1 | 6 |
-| pulse width modulation | 2017-2018 | 1 | 5 |
-| high | 2017-2017 | 1 | 5 |
-| systems | 2018-2018 | 1 | 5 |
-| dc-dc power converters | 2018-2018 | 1 | 6 |
-| transmitters | 2018-2018 | 1 | 5 |
+| integrated | 2017-2017 | 1 | 6 |
 
 ### 2019-2022 (中期)
 
-| 关键词 | 突现区间 | 强度 | 总频次 |
-|---|---|---|---|
-| inverters | 2017-2020 | 1 | 9 |
-| sige | 2017-2020 | 1 | 7 |
-| switch | 2018-2019 | 1 | 6 |
-| coils | 2019-2020 | 1 | 11 |
-| bicmos | 2019-2019 | 1 | 6 |
-| magnetic | 2020-2021 | 1 | 6 |
-| magnetic cores | 2020-2020 | 1 | 6 |
-| high frequency | 2021-2022 | 1 | 5 |
-| topology | 2021-2021 | 1 | 10 |
-| ferrites | 2021-2022 | 1 | 5 |
-| mathematical model | 2021-2021 | 1 | 12 |
-| saturation magnetization | 2021-2021 | 1 | 5 |
-| solid modeling | 2021-2022 | 1 | 5 |
-| semiconductor device modeling | 2022-2022 | 1 | 5 |
-| couplings | 2022-2022 | 1 | 17 |
-| dual-band | 2022-2022 | 1 | 6 |
-| metals | 2022-2022 | 1 | 5 |
+*无突现*
 
 ### 2023-2025 (近期)
 
 | 关键词 | 突现区间 | 强度 | 总频次 |
 |---|---|---|---|
-| transformers | 2023-2025 | 2 | 76 |
-| deep learning | 2024-2025 | 2 | 37 |
-| noise | 2024-2025 | 2 | 17 |
-| network | 2025-2025 | 2 | 21 |
-| accuracy | 2025-2025 | 2 | 23 |
-| predictive models | 2025-2025 | 2 | 17 |
-| semiconductor device | 2025-2025 | 2 | 12 |
-| inductors | 2022-2024 | 1 | 24 |
-| gain | 2022-2025 | 1 | 22 |
-| optimization | 2023-2025 | 1 | 12 |
-| measurement | 2023-2025 | 1 | 11 |
-| power amplifiers | 2023-2025 | 1 | 11 |
-| semiconductor | 2024-2025 | 1 | 14 |
-| transformer | 2024-2025 | 1 | 146 |
-| integrated circuit | 2024-2025 | 1 | 26 |
-| modeling | 2024-2025 | 1 | 25 |
+| deep learning | 2024-2025 | 2 | 33 |
+| transformer | 2024-2025 | 2 | 34 |
+| integrated circuit modeling | 2024-2025 | 1 | 19 |
 | manufacturing | 2024-2024 | 1 | 5 |
-| model | 2024-2025 | 1 | 20 |
-| impedance | 2024-2025 | 1 | 43 |
-| design | 2024-2025 | 1 | 86 |
-| transistors | 2024-2025 | 1 | 16 |
-| radio frequency | 2024-2025 | 1 | 11 |
-| vision transformer | 2025-2025 | 1 | 12 |
-| identification | 2025-2025 | 1 | 10 |
-| detection | 2025-2025 | 1 | 8 |
-| anomaly detection | 2025-2025 | 1 | 10 |
-| data models | 2025-2025 | 1 | 11 |
-| computational modeling | 2025-2025 | 1 | 20 |
-| feature extraction | 2025-2025 | 1 | 15 |
-| circuit faults | 2025-2025 | 1 | 15 |
-| switches | 2025-2025 | 1 | 23 |
-| integrated circuit modeling | 2025-2025 | 1 | 77 |
-| training | 2025-2025 | 1 | 13 |
-| semiconductor manufacturing | 2025-2025 | 1 | 14 |
-| machine learning | 2025-2025 | 1 | 9 |
-| learning | 2025-2025 | 1 | 9 |
+| integrated circuit | 2024-2025 | 1 | 8 |
+| vision transformer | 2025-2025 | 1 | 11 |
+| network | 2025-2025 | 1 | 12 |
+| anomaly detection | 2025-2025 | 1 | 8 |
+| transformers | 2025-2025 | 1 | 29 |
+| data models | 2025-2025 | 1 | 8 |
+| computational modeling | 2025-2025 | 1 | 11 |
+| semiconductor manufacturing | 2025-2025 | 1 | 11 |
+| feature extraction | 2025-2025 | 1 | 13 |
 | deep | 2025-2025 | 1 | 6 |
-| cmos | 2025-2025 | 1 | 41 |
-| power amplifier (pa) | 2025-2025 | 1 | 17 |
-| semiconductor device measurement | 2025-2025 | 1 | 10 |
-| neural networks | 2025-2025 | 1 | 6 |
-| harmonic analysis | 2025-2025 | 1 | 9 |
-| circuits | 2025-2025 | 1 | 10 |
-| estimation | 2025-2025 | 1 | 6 |
-| degradation | 2025-2025 | 1 | 9 |
-| logic gates | 2025-2025 | 1 | 8 |
+| learning | 2025-2025 | 1 | 8 |
+| accuracy | 2025-2025 | 1 | 17 |
 
 ---
 
@@ -137,26 +58,23 @@
 
 | 排名 | 关键词 | 突现区间 | 强度 | 总频次 |
 |---|---|---|---|---|
-| 1 | wide-band | 2015-2015 | 2 | 9 |
-| 2 | transformer feedback | 2015-2015 | 2 | 5 |
-| 3 | converters | 2017-2018 | 2 | 6 |
-| 4 | transformers | 2023-2025 | 2 | 76 |
-| 5 | deep learning | 2024-2025 | 2 | 37 |
-| 6 | noise | 2024-2025 | 2 | 17 |
-| 7 | network | 2025-2025 | 2 | 21 |
-| 8 | accuracy | 2025-2025 | 2 | 23 |
-| 9 | predictive models | 2025-2025 | 2 | 17 |
-| 10 | semiconductor device | 2025-2025 | 2 | 12 |
-| 11 | cmos | 2015-2015 | 1 | 41 |
-| 12 | compact | 2015-2015 | 1 | 7 |
-| 13 | monolithic microwave integrated circuit (mmic) | 2015-2015 | 1 | 9 |
-| 14 | silicon | 2015-2016 | 1 | 14 |
-| 15 | gallium arsenide | 2015-2015 | 1 | 7 |
-| 16 | impedance matching | 2015-2015 | 1 | 12 |
-| 17 | load modulation | 2015-2015 | 1 | 5 |
-| 18 | receiver | 2015-2017 | 1 | 6 |
-| 19 | power-amplifier | 2015-2015 | 1 | 7 |
-| 20 | gallium nitride | 2015-2015 | 1 | 6 |
+| 1 | deep learning | 2024-2025 | 2 | 33 |
+| 2 | transformer | 2024-2025 | 2 | 34 |
+| 3 | integrated | 2017-2017 | 1 | 6 |
+| 4 | integrated circuit modeling | 2024-2025 | 1 | 19 |
+| 5 | manufacturing | 2024-2024 | 1 | 5 |
+| 6 | integrated circuit | 2024-2025 | 1 | 8 |
+| 7 | vision transformer | 2025-2025 | 1 | 11 |
+| 8 | network | 2025-2025 | 1 | 12 |
+| 9 | anomaly detection | 2025-2025 | 1 | 8 |
+| 10 | transformers | 2025-2025 | 1 | 29 |
+| 11 | data models | 2025-2025 | 1 | 8 |
+| 12 | computational modeling | 2025-2025 | 1 | 11 |
+| 13 | semiconductor manufacturing | 2025-2025 | 1 | 11 |
+| 14 | feature extraction | 2025-2025 | 1 | 13 |
+| 15 | deep | 2025-2025 | 1 | 6 |
+| 16 | learning | 2025-2025 | 1 | 8 |
+| 17 | accuracy | 2025-2025 | 1 | 17 |
 
 ---
 
@@ -174,7 +92,7 @@
 
 **Transformer、deep learning、vision transformer** 等深度学习术语突现，表明 Transformer 架构在半导体领域的研究在 2023 年后进入爆发期。
 
-说明：课程展示页与时间线图聚焦于最具解释力的 **Top 25 核心突现词**，而非原始检测得到的全部 97 个突现词。
+说明：课程展示页与论文正文采用 CiteSpace 正式图谱结果；本报告仅说明 Python 复核得到的方向性信号。
 
 关键发现：
 - `transformers` 在 2023-2025 突现，强度 2，总频次 76

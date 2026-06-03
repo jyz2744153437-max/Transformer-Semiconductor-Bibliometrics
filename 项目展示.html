@@ -524,7 +524,7 @@
                         </div>
                         <div class="border-l-2 border-zinc-500 pl-3">
                             <strong class="text-black block mb-1">III. 爆发期 (2024-2025)</strong>
-                            <span>两年累计 115 篇，占 DL 纯净集总量的 <strong class="text-black">78%</strong>。受大模型热潮与 ViT 生态成熟双驱动，架构级 AI 在半导体全场景应用全面爆发。</span>
+                            <span>两年累计 115 篇，占 DL 纯净集总量的 <strong class="text-black">78%</strong>。结合 ViT 生态成熟与半导体场景需求上升，可以看到架构级 AI 在这一阶段进入明显加速。</span>
                         </div>
                     </div>
                     <div class="mt-4 bg-zinc-50 border border-zinc-200 p-4">
@@ -557,7 +557,7 @@
                         <i data-lucide="trending-up" class="absolute -bottom-4 -right-4 w-32 h-32 opacity-10"></i>
                         <div class="flex justify-between items-center mb-4 relative z-10"><h4 class="font-bold text-xl">爆发期</h4><span class="font-mono text-xs bg-zinc-800 px-2 py-1">2024-2025</span></div>
                         <p class="text-4xl font-black mb-4 relative z-10 text-white">57.5<span class="text-sm font-normal text-zinc-400 ml-1">篇/年</span></p>
-                        <p class="text-zinc-300 text-sm relative z-10">两年共计 115 篇，<strong>占 DL 纯净集总量的 78%</strong>。2024 年增速 182%，2025 年延续 171% 高增速。受大模型（LLM）热潮与 ViT 生态成熟的双重驱动，架构级 AI 在半导体缺陷检测、版图生成、良率管控等全场景中的应用全面爆发。</p>
+                        <p class="text-zinc-300 text-sm relative z-10">两年共计 115 篇，<strong>占 DL 纯净集总量的 78%</strong>。2024 年增速 182%；截至当前检索窗口，2025 年仍保持较高活跃度。结合 ViT 生态成熟和应用需求上升来看，架构级 AI 已经成为半导体缺陷检测、版图生成、良率管控等场景中的核心研究方向。</p>
                     </div>
                 </div>
             </div>
@@ -783,7 +783,7 @@
                         <img loading="lazy" src="Visual output/outputs_co_citation_network.png" alt="共被引网络图谱" class="w-full rounded shadow-lg max-h-[50vh] object-contain">
                     </div>
                     <div class="w-full md:w-[45%] text-xs text-zinc-600 leading-relaxed text-left">
-                        <p><strong class="text-black">解读：</strong>共被引网络包含 <strong>N=383 个节点、E=1,262 条连线</strong>（Density=0.0172），时间跨度为 2015–2025 年。</p>
+                        <p><strong class="text-black">解读：</strong>这张 CiteSpace 正式共被引图谱包含 <strong>N=383 个节点、E=1,262 条连线</strong>（Density=0.0172），时间跨度为 2015–2025 年，输入数据为 DL 纯净集 147 篇。</p>
                         <p class="mt-2">网络中最具统治力的高被引节点几乎全部来自 <strong>Vision Transformer (ViT) 及其核心变体</strong>——<strong>Dosovitskiy A (2021)</strong> 提出的 ViT 和 <strong>Liu Z (2021)</strong> 提出的 Swin Transformer 构成了整个知识网络的双核心，节点尺寸和紫色外圈（中心性指标）均最为突出。</p>
                         <p class="mt-2">紧随其后的关键节点包括 <strong>Carion N (2020)</strong> 的 DETR（检测 Transformer）、<strong>Touvron H (2021)</strong> 的训练策略改进，以及 <strong>Xie EZ (2021)</strong>、<strong>Zhou HY (2021)</strong> 等在视觉 backbone 上的方法贡献。</p>
                         <p class="mt-2">在应用层面，<strong>Wei YX (2022)</strong> 的晶圆缺陷识别、<strong>Fan SKS (2024)</strong> 的 ViT 晶圆图分类增强框架以及 <strong>Yu JB (2021/2022)</strong> 的系列工作成为连接基础架构与半导体制造的桥梁节点。</p>
@@ -792,7 +792,7 @@
                             <i data-lucide="external-link" class="w-3 h-3"></i> 交互式共被引网络（力导向拖拽 / 点击高亮 / 卡片悬停）
                         </a>
                         <div class="mt-3 pt-3 border-t border-zinc-200">
-                            <p class="text-[11px] text-zinc-400 mb-1.5">▼ 核心被引文献识别（N=383, 按被引频次与中介中心性排序）</p>
+                            <p class="text-[11px] text-zinc-400 mb-1.5">▼ 核心被引文献识别（正式图谱 N=383；交互页为同源压缩子图）</p>
                             <table class="w-full text-[11px]">
                                 <thead><tr class="text-zinc-400 border-b border-zinc-100"><th class="text-left py-0.5 font-normal">被引文献 (第一作者, 年份)</th><th class="text-center py-0.5 font-normal">知识层级</th><th class="text-right py-0.5 font-normal">角色定位</th></tr></thead>
                                 <tbody class="text-zinc-600">
@@ -946,20 +946,20 @@
                 <p class="text-zinc-500 mb-2 text-sm">采用 Kleinberg 算法，敏锐捕捉特定时间段内被学术界突然高频关注的前沿技术词汇。</p>
                 <div class="flex flex-col md:flex-row gap-6 items-start">
                     <div class="w-full md:w-[45%] text-sm text-zinc-600 leading-relaxed text-left">
-                        <p><strong class="text-black">突现检测（Burst Detection）</strong>是 Kleinberg (2003) 提出的算法，通过建模词频的时序变化识别某词在特定时段是否出现了统计显著的"爆发式"增长。全量主数据集共检出 <strong>97 个原始突现词</strong>；本页聚焦其中 <strong>Top 25 核心突现词</strong>（2015–2025）用于解释三阶段技术演进。</p>
+                        <p><strong class="text-black">突现检测（Burst Detection）</strong>是 Kleinberg (2003) 提出的算法，通过建模词频的时序变化识别某词在特定时段是否出现明显的"爆发式"增长。本页采用的是 <strong>DL 纯净集 147 篇</strong> 的 CiteSpace 正式突现图谱，并聚焦其中最能代表三阶段演进的核心术语来解释技术变化。</p>
                         <p class="mt-3">突现强度绝对值普遍不高（最高仅 <strong class="text-red-600">1.90</strong>），这与交叉领域仍处高速扩张初期、文献基数快速增长导致词频基线抬高的统计特征有关。</p>
                         <div class="mt-5 space-y-3">
                             <div class="border-l-4 border-zinc-300 pl-3">
                                 <span class="text-xs text-zinc-400">第一波 (2017–2019)</span>
-                                <p class="text-xs text-zinc-500">RFID、电感耦合、反激变换器等电力电子硬件术语，强度<0.7，传统器件研究微弱信号。</p>
+                                <p class="text-xs text-zinc-500">RFID、电感耦合、反激变换器等传统器件术语仍占主导，说明 Transformer 方法尚未进入这个场景的核心视野。</p>
                             </div>
                             <div class="border-l-4 border-zinc-500 pl-3">
                                 <span class="text-xs text-zinc-400">第二波 (2020–2022)</span>
-                                <p class="text-xs text-zinc-500">mathematical model (1.2) + classification (1.9) 标志 AI 分类方法规模化导入。</p>
+                                <p class="text-xs text-zinc-500">mathematical model 与 classification 等术语开始上升，说明 AI 分类方法正在进入半导体相关任务。</p>
                             </div>
                             <div class="border-l-4 border-red-500 pl-3">
                                 <span class="text-xs text-zinc-400">第三波 (2023–2025)</span>
-                                <p class="text-xs text-zinc-500"><strong>2024 年标志性拐点</strong>——vision transformers、ViT、super resolution、SEM 等 6 个术语同步突现。2025 年 anomaly detection 接棒延续。</p>
+                                <p class="text-xs text-zinc-500"><strong>2024 年是明显转折点</strong>——vision transformers、ViT、super resolution、SEM 等代表性术语集中活跃。到 2025 年，anomaly detection 继续成为延续性前沿信号。</p>
                             </div>
                         </div>
                     </div>
@@ -968,7 +968,7 @@
                     </div>
                 </div>
                 <div class="mt-4 bg-white border border-zinc-200 p-4">
-                    <p class="text-sm text-zinc-700"><strong>Takeaway：</strong>突现检测负责回答“什么时候真的开始变了”，而答案非常集中地指向 2024 这一历史拐点。</p>
+                    <p class="text-sm text-zinc-700"><strong>Takeaway：</strong>突现检测最重要的作用，是帮助我们判断这个领域究竟是从什么时候开始明显加速的；从当前样本看，关键变化集中出现在 2024 附近。</p>
                 </div>
             </div>
         </section>
@@ -977,7 +977,7 @@
         <section class="slide bg-dot-pattern">
             <div class="reveal max-w-[92%] mx-auto w-full">
                 <h3 class="text-xl font-bold mb-3 border-l-4 border-black pl-4">突现主题三阶段技术演进解读</h3>
-                <p class="text-xs text-zinc-500 mb-4">全量检测得到 97 个原始突现词，本页选取 <strong>Top 25 核心突现词</strong>（2015–2025）按时间顺序呈现三波技术浪潮。</p>
+                <p class="text-xs text-zinc-500 mb-4">本页按时间顺序提炼 CiteSpace 正式突现图谱中的代表性术语，用来呈现 2015–2025 年三阶段技术浪潮。</p>
                 <div class="space-y-2.5">
                     <div class="bg-white p-3 border-l-4 border-red-500 flex justify-between items-center group hover:bg-red-50 transition-colors">
                         <div>
@@ -1042,7 +1042,7 @@
         <section class="slide">
             <div class="reveal max-w-[94%] mx-auto w-full">
                 <h3 class="text-3xl font-bold mb-2">突现主题三阶段技术演进解读</h3>
-                <p class="text-zinc-500 mb-4 text-sm">全量检测得到 97 个原始突现词，而此页聚焦最具解释力的 <strong>Top 25 核心突现词</strong>（2015–2025）来呈现三波技术浪潮。突现强度绝对值普遍不高（最高 1.9），这与交叉领域仍处高速扩张初期、文献基数快速增长导致词频基线抬高的统计特征有关，并不削弱趋势信号的结构性意义。</p>
+                <p class="text-zinc-500 mb-4 text-sm">这一页聚焦 CiteSpace 正式突现图谱中的代表性术语来呈现三波技术浪潮。突现强度绝对值普遍不高（最高 1.9），这更适合被理解为交叉领域早期扩张阶段的统计特征，而不是趋势不存在。</p>
 
                 <!-- 三波卡片 -->
                 <div class="flex flex-col md:flex-row gap-0 md:gap-0 mb-5">
@@ -1209,16 +1209,16 @@
                     <div class="relative pl-8">
                         <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-zinc-500 border-2 border-white"></span>
                         <h4 class="font-bold text-base mb-1 text-zinc-700">第二波：计算建模过渡 (2020–2022)</h4>
-                        <p class="text-zinc-600 text-sm"><strong>mathematical model</strong>（Burst 1.2，2020–2021）成为首个突破 1.0 强度的突现词。<strong>classification</strong>（Burst 1.9）与 <strong>convolutional neural networks</strong>（Burst 1.19）于 2022 年同步突现，宣告 AI 分类方法正式进入核心学术话语。时间线上，#8 cnn（2021 起）、#1 machine learning（2022 起）、#3 defect detection（2022 起）三个 AI 聚类同步诞生，#4 inductors 和 #9 parallel processing 则在此阶段产出最后一批节点后停止活跃。该阶段是<strong>从纯硬件到"硬件+AI"的范式转换临界区</strong>。</p>
+                        <p class="text-zinc-600 text-sm"><strong>mathematical model</strong>（Burst 1.2，2020–2021）成为首个突破 1.0 强度的突现词。<strong>classification</strong>（Burst 1.9）与 <strong>convolutional neural networks</strong>（Burst 1.19）于 2022 年同步突现，说明 AI 分类方法开始进入核心研究讨论。时间线上，#8 cnn（2021 起）、#1 machine learning（2022 起）、#3 defect detection（2022 起）三个 AI 聚类同步诞生，#4 inductors 和 #9 parallel processing 则在此阶段产出最后一批节点后停止活跃。该阶段更适合被理解为<strong>从纯硬件向"硬件+AI"过渡的关键窗口</strong>。</p>
                     </div>
                     <div class="relative pl-8">
                         <span class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-black border-4 border-white shadow-md"></span>
                         <h4 class="font-bold text-base mb-1 text-black">第三波：Transformer 架构大爆发 (2023–2025)</h4>
-                        <p class="text-zinc-800 text-sm"><strong>2024 年成为标志性拐点</strong>——vision transformers（Burst 1.05）、ViT（Burst 1.05）、super resolution（Burst 1.05）、scanning electron microscope（Burst 1.59）、load modeling（Burst 1.05）、data augmentation（Burst 0.89）共 6 个术语在 2024 年同步突现，形成该领域史上最大规模的术语集中爆发。task analysis（Burst 1.86）反映研究范式从算法竞赛向系统级任务分析的升级。2025 年，anomaly detection（Burst 0.97）与 machine learning（Burst 0.83）接棒延续。时间线上，#1 machine learning、#2 annotation、#3 defect detection、#8 cnn 四大 AI 聚类同步活跃至 2025 年，而 #4、#6、#9 等传统聚类已系统性退场。</p>
+                        <p class="text-zinc-800 text-sm"><strong>2024 年是一个明显的转折节点</strong>：vision transformers（Burst 1.05）、ViT（Burst 1.05）、super resolution（Burst 1.05）、scanning electron microscope（Burst 1.59）、load modeling（Burst 1.05）、data augmentation（Burst 0.89）等术语在这一阶段集中活跃。task analysis（Burst 1.86）提示研究范式开始从单一算法比拼转向任务级分析。到 2025 年，anomaly detection（Burst 0.97）与 machine learning（Burst 0.83）继续延伸这条前沿线索。时间线上，#1 machine learning、#2 annotation、#3 defect detection、#8 cnn 四大 AI 聚类同步活跃至 2025 年，而 #4、#6、#9 等传统聚类则逐步退场。</p>
                     </div>
                 </div>
                 <div class="mt-4 bg-zinc-50 border border-zinc-200 p-4">
-                    <p class="text-sm text-zinc-700"><strong>Takeaway：</strong>深度讨论页的任务不是重复结果，而是把发文趋势、聚类分化、突现爆发与知识迁移合成为一个总解释：为什么 2024 是历史级别的拐点。</p>
+                    <p class="text-sm text-zinc-700"><strong>Takeaway：</strong>深度讨论页的任务不是重复结果，而是把发文趋势、聚类分化、突现变化与知识迁移合在一起解释：为什么 2024 会成为一个明显的转折点。</p>
                 </div>
             </div>
         </section>
@@ -1383,7 +1383,7 @@
                     <div class="bg-white p-5 border border-zinc-200 text-center">
                         <p class="text-3xl font-black text-black mb-2">2024</p>
                         <div class="h-px bg-zinc-200 w-full mb-2"></div>
-                        <h4 class="font-bold text-sm mb-1">历史级拐点</h4>
+                        <h4 class="font-bold text-sm mb-1">关键转折节点</h4>
                         <p class="text-xs text-zinc-500">6个Transformer术语同步突现，SEM硬件数据源与AI方法在该节点对接。</p>
                     </div>
                     <div class="bg-black text-white p-5 border border-zinc-800 text-center">
@@ -1425,7 +1425,7 @@
                             <ul class="space-y-4 text-sm text-zinc-700 leading-relaxed">
                                 <li class="flex gap-3">
                                     <span class="font-mono font-bold text-black flex-shrink-0">01</span>
-                                    <span><strong>领域认识贡献：</strong>用发文趋势、聚类分化、知识基础与突现检测共同证明，该领域的核心问题已从传统硬件器件研究转向 Transformer 驱动的半导体智能制造。</span>
+                                    <span><strong>领域认识贡献：</strong>用发文趋势、聚类分化、知识基础与突现检测共同说明，该领域的核心关注点正在从传统硬件器件研究转向 Transformer 驱动的半导体智能制造。</span>
                                 </li>
                                 <li class="flex gap-3">
                                     <span class="font-mono font-bold text-black flex-shrink-0">02</span>

@@ -53,6 +53,8 @@ NOT TS=("power transformer" OR "voltage" OR "current transformer"
 
 **DL 语义筛选逻辑**：识别 "attention mechanism"、"vision transformer"、"deep learning" 等 DL 特征词作为纳入信号；排除 "power amplifier"、"MMIC"、"DC-DC"、"Doherty" 等电力电子术语。最终保留 147 篇真正使用深度学习 Transformer 架构的半导体相关论文。
 
+> 时间边界说明：正式展示时间范围统一写作 `2015-2025`。检索冻结时间为 `2026-04-14`，其中 2026 Early Access 记录不进入主趋势图解读；涉及 2025 的判断均理解为“截至当前检索窗口”的样本内趋势。
+
 筛选细则见 [reports/screening_rule.md](reports/screening_rule.md)。
 
 ## 3. 研究方法
@@ -67,8 +69,10 @@ NOT TS=("power transformer" OR "voltage" OR "current transformer"
 | 时间线分析 | CiteSpace (Timeline View) | 展示聚类演变 |
 
 - CiteSpace 参数：g-index k=25，Pathfinder 剪枝，LLR 聚类算法
-- DL 纯净集（147 篇）作为 CiteSpace 全部图谱与 Python 网络分析的核心输入，全量集（643 篇）仅用于国家/机构分布等宏观统计
+- DL 纯净集（147 篇）作为 CiteSpace 全部核心图谱的正式输入；全量集（643 篇）仅用于国家/机构分布等宏观统计
+- Python 交互网络与复核脚本均派生自同一 147 篇数据集，仅作辅助浏览或结果核对，不替代 CiteSpace 正式图谱口径
 - 方法学详见 [reports/methodology.md](reports/methodology.md)
+- 统一口径见 [docs/分析口径对照表.md](docs/分析口径对照表.md)
 
 ## 4. 项目结构
 
@@ -139,7 +143,7 @@ Transformer-Semiconductor-Bibliometrics/
 
 ### 5.1 发文趋势：从涓涓细流到指数爆发
 
-2017-2021 年间年均发文不足 3 篇。2021 年 ViT 与 Swin Transformer 发表后，经过约 1 年学术传导延迟，2022 年起发文量以年均 83%–182% 的速度爆发增长。至 2024-2025 年，DL 纯净集中 78% 的论文集中涌现（115/147 篇），领域正式进入"白热化上升期"。
+2017-2021 年间年均发文不足 3 篇。2021 年 ViT 与 Swin Transformer 发表后，经过约 1 年学术传导延迟，2022 年起发文量以年均 83%–182% 的速度快速增长。至 2024-2025 年，DL 纯净集中 78% 的论文集中涌现（115/147 篇），显示该领域已进入明显的加速阶段。
 
 ### 5.2 知识基础：ViT/Swin 双核心的三层引文结构
 
@@ -163,7 +167,7 @@ Transformer-Semiconductor-Bibliometrics/
 
 ### 5.4 突现检测：三阶段技术演进与 2024 历史拐点
 
-Kleinberg 算法在全量主数据集上检出 97 个原始突现词；其中用于课程展示与时间线解读的 Top 25 核心突现词表明，2024 年是关键拐点——vision transformers、ViT、super resolution、SEM、load modeling、data augmentation 六个术语同步突现。2025 年前沿向 anomaly detection 收敛。
+CiteSpace 在 DL 纯净集（147 篇）上识别 25 个突现词；其中 2024 年出现 vision transformers、ViT、super resolution、SEM、load modeling、data augmentation 等代表性术语同步突现，显示该阶段方法、数据源与任务场景开始集中升温。到 2025 年，anomaly detection 成为最新的延续性前沿信号。
 
 ### 5.5 国家竞争格局：中国断层式领先
 
@@ -181,12 +185,12 @@ Kleinberg 算法在全量主数据集上检出 97 个原始突现词；其中用
 | 总被引次数 | 5,974 | 884 |
 | h-index | 37 | 16 |
 | 作者数 | 2,517 | — |
-| 共被引网络 Q 值 | 0.8411 | — |
-| 共被引网络 S 值 | 0.9522 | — |
+| 共被引网络 Q 值 | — | 0.8411 |
+| 共被引网络 S 值 | — | 0.9522 |
 | 聚类 Q 值 | 0.673 | — |
 | 聚类 S 值 | 0.902 | — |
 
-> 注：Q/S 值为 CiteSpace 全量集分析结果。DL 纯净集文献量（147 篇）不足以构建稳定的共被引网络，故未单独计算网络指标。作者数因 CSV 作者字段格式不统一暂未统计。
+> 注：共被引网络 `N=383, E=1,262, Q=0.8411, S=0.9522` 为 **DL 纯净集 147 篇** 的 CiteSpace 正式图谱结果；`outputs/network_qc_summary.csv` 中的 `89/200` 为同源 Python 压缩子图，仅用于交互浏览和辅助排序。统一说明见 [docs/分析口径对照表.md](docs/分析口径对照表.md)。
 
 ## 6. 可视化产出
 

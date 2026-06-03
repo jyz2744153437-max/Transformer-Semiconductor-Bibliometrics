@@ -8,8 +8,8 @@
 功能：
 1. 解析 WOS 数据
 2. 生成筛选记录
-3. 运行文献计量分析（需 bibliometrics-mini）
-4. 运行突现检测
+3. 运行突现检测
+4. 检查既有文献计量产出
 5. 生成可视化
 """
 
@@ -34,6 +34,9 @@ def check_data_files():
         else:
             print(f'  [MISSING] {f} 不存在')
             all_ok = False
+
+    if all_ok:
+        print('  [NOTE] 筛选记录与突现检测默认仅使用上述 643 篇全量主数据集，不混入 download_1-147.txt')
 
     return all_ok
 
@@ -154,6 +157,7 @@ def print_bibliometrics_mini_note():
     """提示 bibliometrics-mini 操作"""
     print('\n[Step 7] bibliometrics-mini 文献计量分析...')
     print('  [OK] 已完成（基于 DL 纯净集 147 篇）')
+    print('  [NOTE] 当前仓库未内置 bmmini 源码；如需重跑，请先准备课程模板或等价环境。')
     print('  如需重新运行：')
     print('     $env:PYTHONPATH="src"')
     print('     python -m bmmini.pipeline --config config/query.yaml --use-wos')

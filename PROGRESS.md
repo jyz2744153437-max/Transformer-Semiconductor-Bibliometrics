@@ -1,7 +1,9 @@
 # 项目进度追踪
 
-> 最后更新：2026-05-06
+> 最后更新：2026-06-03
 > 当前阶段：M3 终稿与 Release（进行中）
+
+> 说明：本文件已进入收尾维护阶段。2026-06-03 已补做复现链核查，确认 `screening` 与 `burst` 脚本默认只读取全量主数据集 643 篇，避免误混 `download_1-147.txt` 导致口径漂移。
 
 ---
 
@@ -147,3 +149,14 @@
 | 6.12 | CHANGELOG/README 同步 | 项目结构新增质量基准/、交互式网络图产出 |
 | 6.13 | 四个交互网络重写 | 重写 `src/visualize_interactive.py`，重新生成 4 个 Plotly HTML（84/89/91/106 节点） |
 | 6.14 | 在线链接修复 | README 与 项目展示.html 改为 GitHub Pages 在线地址，避免点进源码页 |
+
+---
+
+## 2026-06-03 第十四周收尾核查
+
+| # | 事项 | 产出 |
+|---|---|---|
+| 14.1 | 本地复现链检查 | 识别 `run_pipeline.py` 可运行，但 `create_screening.py` / `burst_detection.py` 会误读 `download_1-147.txt` |
+| 14.2 | 口径修复 | 两个脚本改为只读取 `download_1-500.txt` 与 `download_501-643.txt` |
+| 14.3 | 依赖补齐 | `requirements.txt` 增补 `scipy`、`matplotlib`、`pyvis` |
+| 14.4 | 文档统一 | 更新 PROGRESS；为旧阶段文档补“历史快照”提示；补充 Release 更新草案 |

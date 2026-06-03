@@ -1,6 +1,8 @@
 # 项目流程
 
 > 基于 Transformer 的半导体制造关键技术研究热点与发展趋势——文献计量分析（2015-2025）
+>
+> 注：本文件主要保留 2026-05-01 阶段的流程快照。当前对外展示技术已从早期 React/Tailwind 方案收束为 `项目展示.html + gh-pages` 的独立 HTML 版本，项目现状以仓库根目录 `README.md` 与 `PROGRESS.md` 为准。
 
 ---
 
@@ -66,7 +68,7 @@
 | 文档体系 | 检索式设计、字段字典、数据质量报告、筛选规则、查新报告、PRISMA |
 | 计量产出 | 7 类 CiteSpace 图谱、突现检测报告、网络指标汇总 |
 | 论文 | Mini Review 初稿（manuscript_v1.md） |
-| 展示网页 | GitHub Pages 单页应用（React + Tailwind） |
+| 展示网页 | GitHub Pages 独立 HTML 单页展示（当前线上版本） |
 | GitHub | 完整仓库 + v1.0 Release + 7 个 Topics 标签 |
 
 ## 6. 项目复盘

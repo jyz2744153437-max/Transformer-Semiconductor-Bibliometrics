@@ -5,6 +5,16 @@ import re
 from pathlib import Path
 import pandas as pd
 
+SOURCE_FILES = [
+    'download_1-500.txt',
+    'download_501-643.txt',
+]
+
+
+def is_valid_record(record):
+    """忽略文件头或异常空记录，只保留真正的 WoS 条目。"""
+    return bool(record.get('UT') or record.get('PT'))
+
 _WOS_TAGS = {
     'PT', 'AU', 'AF', 'TI', 'SO', 'LA', 'DT', 'DE', 'ID', 'AB',
     'C1', 'RP', 'EM', 'FU', 'FX', 'CR', 'NR', 'TC', 'Z9', 'U1',
@@ -32,7 +42,7 @@ def parse_wos_file(path):
                 rest = line[tag_match.end():]
                 value = rest.strip()
                 if tag == 'ER':
-                    if current:
+                    if current and is_valid_record(current):
                         records.append({k: '; '.join(v) for k, v in current.items()})
                     current = {}
                     current_tag = ''
@@ -46,16 +56,18 @@ def parse_wos_file(path):
                 if current_tag in current:
                     current[current_tag].append(value)
 
-    if current:
+    if current and is_valid_record(current):
         records.append({k: '; '.join(v) for k, v in current.items()})
 
     return records
 
 def parse_wos_dir(dir_path):
-    """解析目录下所有 WoS 文件"""
+    """只解析全量主数据集，避免混入 DL 纯净集导出文件。"""
     all_records = []
-    for txt_file in sorted(Path(dir_path).glob('*.txt')):
-        all_records.extend(parse_wos_file(txt_file))
+    for filename in SOURCE_FILES:
+        txt_file = Path(dir_path) / filename
+        if txt_file.exists():
+            all_records.extend(parse_wos_file(txt_file))
     return all_records
 
 def create_screening_csv(records, output_path):

@@ -30,7 +30,8 @@ def read_bursts(csv_path):
 def plot_burst_timeline(bursts, output_path, top_n=25):
     """绘制突现时间线图"""
 
-    # 取 Top N
+    # 取 Top N，并保留全量计数供标题说明
+    total_bursts = len(bursts)
     bursts = bursts[:top_n]
 
     fig, ax = plt.subplots(figsize=(16, 12))
@@ -66,7 +67,7 @@ def plot_burst_timeline(bursts, output_path, top_n=25):
     ax.set_xlim(year_min - 12, year_max + 8)
     ax.set_ylim(-0.5, len(bursts) + 0.5)
     ax.set_xlabel('年份', fontsize=12)
-    ax.set_title('关键词突现检测 (Top 25)', fontsize=14, fontweight='bold')
+    ax.set_title(f'关键词突现检测（核心 Top {top_n} / 原始检测 {total_bursts}）', fontsize=14, fontweight='bold')
 
     # 年份刻度
     ax.set_xticks(range(year_min, year_max + 2))
@@ -109,7 +110,7 @@ def generate_report(bursts, output_path):
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('# 关键词突现检测报告\n\n')
         f.write('> 基于 Kleinberg 突现检测算法\n')
-        f.write('> 创建日期：2026-05-01\n\n')
+        f.write('> 创建日期：2026-06-03\n\n')
         f.write('---\n\n')
 
         f.write('## 1. 突现检测方法\n\n')
@@ -118,7 +119,8 @@ def generate_report(bursts, output_path):
         f.write('| 算法 | Kleinberg Burst Detection |\n')
         f.write('| 参数 | s=2, γ=1 |\n')
         f.write('| 最小频次 | 5 |\n')
-        f.write(f'| 检测结果 | {len(bursts)} 个突现 |\n\n')
+        f.write(f'| 原始检测结果 | {len(bursts)} 个突现 |\n')
+        f.write('| 核心展示口径 | Top 25 核心突现词（用于时间线图与答辩展示） |\n\n')
 
         f.write('---\n\n')
         f.write('## 2. 突现时间分布\n\n')
@@ -135,7 +137,7 @@ def generate_report(bursts, output_path):
                 f.write('*无突现*\n\n')
 
         f.write('---\n\n')
-        f.write('## 3. Top 20 突现关键词\n\n')
+        f.write('## 3. Top 20 突现关键词（按原始检测结果排序）\n\n')
         f.write('| 排名 | 关键词 | 突现区间 | 强度 | 总频次 |\n')
         f.write('|---|---|---|---|---|\n')
         for i, b in enumerate(bursts[:20], 1):
@@ -150,14 +152,15 @@ def generate_report(bursts, output_path):
         f.write('### 4.3 近期突现 (2023-2025)\n\n')
         f.write('**Transformer、deep learning、vision transformer** 等深度学习术语突现，')
         f.write('表明 Transformer 架构在半导体领域的研究在 2023 年后进入爆发期。\n\n')
+        f.write('说明：课程展示页与时间线图聚焦于最具解释力的 **Top 25 核心突现词**，而非原始检测得到的全部 97 个突现词。\n\n')
         f.write('关键发现：\n')
         f.write('- `transformers` 在 2023-2025 突现，强度 2，总频次 76\n')
         f.write('- `deep learning` 在 2024-2025 突现，强度 2，总频次 37\n')
         f.write('- `vision transformer` 在 2025 突现，强度 1，总频次 12\n\n')
 
         f.write('---\n\n')
-        f.write('**文档版本**：v1.0\n')
-        f.write('**创建日期**：2026-05-01\n')
+        f.write('**文档版本**：v1.1 draft\n')
+        f.write('**创建日期**：2026-06-03\n')
 
     print(f'报告保存至: {output_path}')
 

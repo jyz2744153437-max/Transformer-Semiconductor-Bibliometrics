@@ -2,7 +2,15 @@
 
 > **TL;DR**：2015-2025 年，Transformer 架构在半导体制造领域的研究经历了"传统硬件主导→AI 方法渗透→Transformer 大爆发"三阶段技术演进。中国以 260 篇（40.4%）断层式领先，但奠基性工作仍由非中国机构完成。2024 年是关键历史拐点——vision transformers、ViT、SEM 等 6 个术语同步突现。前沿正从"已知缺陷分类"向"未知异常检测"升级。
 
-> **当前状态**：M3 终稿阶段（2026-05-16）。图谱分析已完成，L21-22 写作模块 8 项过程产出已补齐，manuscript 已具备 IMRAD 结构。下一步：精排期末 PPT、终稿润色。
+> **当前状态**：答辩收口阶段（2026-06-03）。图谱分析、L21-22 写作模块与第十四周复现链核查均已完成，当前主任务是以 `项目展示.html` 作为答辩主舞台，统一课程补件、公开文案与最终归档入口。
+
+## 快速入口
+
+- 答辩主页面：[`项目展示.html`](项目展示.html)
+- 论文主稿：[`paper/manuscript_v1.md`](paper/manuscript_v1.md)
+- 课堂要求对照：[`docs/课堂进度对照矩阵.md`](docs/课堂进度对照矩阵.md)
+- 终版归档说明：[`docs/终版归档说明.md`](docs/终版归档说明.md)
+- Release 草案：[`docs/release_v1.1_draft.md`](docs/release_v1.1_draft.md)
 
 ## 1. 项目简介
 
@@ -74,7 +82,7 @@ NOT TS=("power transformer" OR "voltage" OR "current transformer"
 
 ```
 Transformer-Semiconductor-Bibliometrics/
-├── 项目展示.html                   # 交互式单页幻灯片（成果展示主页）
+├── 项目展示.html                   # 交互式单页幻灯片（答辩主舞台 / 成果展示主页）
 ├── CiteSpace分析套件/              # CiteSpace 复现包（数据+参数+操作步骤）
 ├── Data/                         # 原始数据
 │   ├── download_1-500.txt        # WoS 导出（第1批）
@@ -94,6 +102,12 @@ Transformer-Semiconductor-Bibliometrics/
 │   ├── query_changelog.md        # 检索式变更日志
 │   ├── data_model.md             # 图数据模型
 │   ├── cleaning_rules.md         # 数据清洗规则
+│   ├── 课堂进度对照矩阵.md          # 第21-32次课要求对照
+│   ├── 引用库与AI伦理说明.md        # 文献来源与AI使用边界
+│   ├── 智能体工作流总览.md          # 人机协作流程说明
+│   ├── 写作修订日志.md             # 关键改写记录
+│   ├── 预答辩与PR-Review准备包.md  # 预答辩讲述与问答
+│   ├── 终版归档说明.md             # 最终材料入口说明
 │   └── 团队分工.md                 # 团队分工说明
 ├── reports/                      # 分析报告
 │   ├── data_quality.md           # 数据质量报告（A级评级）
@@ -120,7 +134,7 @@ Transformer-Semiconductor-Bibliometrics/
 │   ├── burst_detection.py        # 突现检测（Kleinberg 算法）
 │   ├── burst_visualize.py        # 突现可视化
 │   ├── create_screening.py       # 筛选记录生成
-│   └── metrics_calculator.*      # 指标计算
+│   ├── metrics_calculator.*      # 指标计算
 │   └── visualize_pyvis.py        # Pyvis 交互式网络图生成
 ├── paper/                        # 论文草稿
 │   └── manuscript_v1.md          # Mini Review 初稿
@@ -163,7 +177,7 @@ Transformer-Semiconductor-Bibliometrics/
 
 ### 5.4 突现检测：三阶段技术演进与 2024 历史拐点
 
-Kleinberg 算法识别 25 个突现词，2024 年是关键拐点——vision transformers、ViT、super resolution、SEM、load modeling、data augmentation 六个术语同步突现。2025 年前沿向 anomaly detection 收敛。
+Kleinberg 算法在全量主数据集上检出 97 个原始突现词；其中用于课程展示与时间线解读的 Top 25 核心突现词表明，2024 年是关键拐点——vision transformers、ViT、super resolution、SEM、load modeling、data augmentation 六个术语同步突现。2025 年前沿向 anomaly detection 收敛。
 
 ### 5.5 国家竞争格局：中国断层式领先
 
@@ -188,7 +202,13 @@ Kleinberg 算法识别 25 个突现词，2024 年是关键拐点——vision tra
 
 > 注：Q/S 值为 CiteSpace 全量集分析结果。DL 纯净集文献量（147 篇）不足以构建稳定的共被引网络，故未单独计算网络指标。作者数因 CSV 作者字段格式不统一暂未统计。
 
-## 6. 可视化产出
+## 6. 当前交付策略
+
+- `项目展示.html` 是当前优先级最高的主交付物，用于现场答辩与 GitHub Pages 对外展示。
+- `paper/manuscript_v1.md` 保持学术主稿角色，负责承载更完整的 IMRAD 叙事。
+- `docs/课堂进度对照矩阵.md` 与 `docs/终版归档说明.md` 负责把课程第 21-32 次课要求与现有成果逐项对齐。
+- 现有 PPT 继续保留，但不再作为本轮完成度冲刺的主线。
+## 7. 可视化产出
 
 ### 关键词共现网络
 ![关键词共现网络](Visual%20output/outputs_keyword_cooccurrence_network.png)

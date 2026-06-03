@@ -44,6 +44,8 @@ if (!dataOk) {
     process.exit(1);
 }
 
+console.log('  ℹ️  Node 指标管道默认基于 643 篇全量主数据集运行；DL 纯净集 147 篇主要用于 CiteSpace 图谱与 Python 网络分析。');
+
 // Step 2: 运行指标计算
 console.log('\n[Step 2] 运行指标计算...');
 try {
@@ -81,6 +83,8 @@ const docs = [
     ['config/query.yaml', '检索式配置'],
     ['docs/data_model.md', '图数据模型'],
     ['docs/project_outline.md', '项目大纲'],
+    ['docs/课堂进度对照矩阵.md', '课堂进度对照矩阵'],
+    ['docs/终版归档说明.md', '终版归档说明'],
     ['baseline/params.md', 'CiteSpace 参数'],
     ['baseline/tool_selection.md', '工具选型'],
 ];

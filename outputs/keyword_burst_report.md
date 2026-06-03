@@ -1,9 +1,7 @@
 # 关键词突现检测报告
 
 > 基于 Kleinberg 突现检测算法
-> 创建日期：2026-05-01
-
-> ⚠️ **重要说明**：本报告基于全量 643 篇数据（含约 77% 电力电子变压器等非 DL 文献噪声），检测到的 97 个突现词中包含大量电力电子/射频电路术语（如 MMIC、CMOS、GaN、Doherty、DC-DC converter 等），这些与深度学习 Transformer 架构无关。项目核心分析使用 CiteSpace 识别的 25 个突现词（见 README 及论文初稿），本报告仅作为 Python 算法实现的参照存档。
+> 创建日期：2026-06-03
 
 ---
 
@@ -14,7 +12,8 @@
 | 算法 | Kleinberg Burst Detection |
 | 参数 | s=2, γ=1 |
 | 最小频次 | 5 |
-| 检测结果 | 97 个突现 |
+| 原始检测结果 | 97 个突现 |
+| 核心展示口径 | Top 25 核心突现词（用于时间线图与答辩展示） |
 
 ---
 
@@ -24,8 +23,8 @@
 
 | 关键词 | 突现区间 | 强度 | 总频次 |
 |---|---|---|---|
-| transformer feedback | 2015-2015 | 2 | 5 |
 | wide-band | 2015-2015 | 2 | 9 |
+| transformer feedback | 2015-2015 | 2 | 5 |
 | converters | 2017-2018 | 2 | 6 |
 | cmos | 2015-2015 | 1 | 41 |
 | compact | 2015-2015 | 1 | 7 |
@@ -111,13 +110,13 @@
 | identification | 2025-2025 | 1 | 10 |
 | detection | 2025-2025 | 1 | 8 |
 | anomaly detection | 2025-2025 | 1 | 10 |
-| computational modeling | 2025-2025 | 1 | 20 |
 | data models | 2025-2025 | 1 | 11 |
-| circuit faults | 2025-2025 | 1 | 15 |
+| computational modeling | 2025-2025 | 1 | 20 |
 | feature extraction | 2025-2025 | 1 | 15 |
+| circuit faults | 2025-2025 | 1 | 15 |
 | switches | 2025-2025 | 1 | 23 |
-| training | 2025-2025 | 1 | 13 |
 | integrated circuit modeling | 2025-2025 | 1 | 77 |
+| training | 2025-2025 | 1 | 13 |
 | semiconductor manufacturing | 2025-2025 | 1 | 14 |
 | machine learning | 2025-2025 | 1 | 9 |
 | learning | 2025-2025 | 1 | 9 |
@@ -134,12 +133,12 @@
 
 ---
 
-## 3. Top 20 突现关键词
+## 3. Top 20 突现关键词（按原始检测结果排序）
 
 | 排名 | 关键词 | 突现区间 | 强度 | 总频次 |
 |---|---|---|---|---|
-| 1 | transformer feedback | 2015-2015 | 2 | 5 |
-| 2 | wide-band | 2015-2015 | 2 | 9 |
+| 1 | wide-band | 2015-2015 | 2 | 9 |
+| 2 | transformer feedback | 2015-2015 | 2 | 5 |
 | 3 | converters | 2017-2018 | 2 | 6 |
 | 4 | transformers | 2023-2025 | 2 | 76 |
 | 5 | deep learning | 2024-2025 | 2 | 37 |
@@ -175,6 +174,8 @@
 
 **Transformer、deep learning、vision transformer** 等深度学习术语突现，表明 Transformer 架构在半导体领域的研究在 2023 年后进入爆发期。
 
+说明：课程展示页与时间线图聚焦于最具解释力的 **Top 25 核心突现词**，而非原始检测得到的全部 97 个突现词。
+
 关键发现：
 - `transformers` 在 2023-2025 突现，强度 2，总频次 76
 - `deep learning` 在 2024-2025 突现，强度 2，总频次 37
@@ -182,5 +183,5 @@
 
 ---
 
-**文档版本**：v1.0
-**创建日期**：2026-05-01
+**文档版本**：v1.1 draft
+**创建日期**：2026-06-03

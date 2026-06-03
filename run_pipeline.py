@@ -142,6 +142,8 @@ def check_docs():
         ('docs/data_model.md', '图数据模型'),
         ('docs/query_rationale.md', '检索设计思路'),
         ('docs/query_changelog.md', '检索式变更日志'),
+        ('docs/课堂进度对照矩阵.md', '课堂进度对照矩阵'),
+        ('docs/终版归档说明.md', '终版归档说明'),
         ('paper/manuscript_v1.md', 'Mini Review 初稿'),
     ]
 

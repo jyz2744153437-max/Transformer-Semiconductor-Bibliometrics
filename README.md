@@ -194,23 +194,31 @@ CiteSpace 在 DL 纯净集（147 篇）上识别 25 个突现词；其中 2024 �
 
 ## 6. 可视化产出
 
+> README 中展示的是轻量预览图，便于 GitHub 页面稳定加载；高清原图仍保存在 `Visual output/` 目录。
+
 ### 关键词共现网络
-![关键词共现网络](Visual%20output/outputs_keyword_cooccurrence_network.png)
+![关键词共现网络](docs/assets/readme_visuals/keyword_cooccurrence_network_preview.jpg)
+[查看高清原图](Visual%20output/outputs_keyword_cooccurrence_network.png)
 
 ### 关键词聚类图 (LLR)
-![关键词聚类图](Visual%20output/outputs_keyword_cluster.png)
+![关键词聚类图](docs/assets/readme_visuals/keyword_cluster_preview.jpg)
+[查看高清原图](Visual%20output/outputs_keyword_cluster.png)
 
 ### 共被引网络
-![共被引网络](Visual%20output/outputs_co_citation_network.png)
+![共被引网络](docs/assets/readme_visuals/co_citation_network_preview.jpg)
+[查看高清原图](Visual%20output/outputs_co_citation_network.png)
 
 ### 共被引聚类图
-![共被引聚类图](Visual%20output/outputs_co_citation_cluster.png)
+![共被引聚类图](docs/assets/readme_visuals/co_citation_cluster_preview.jpg)
+[查看高清原图](Visual%20output/outputs_co_citation_cluster.png)
 
 ### 突现检测时间线
-![突现检测时间线](Visual%20output/outputs_burst_timeline.png)
+![突现检测时间线](docs/assets/readme_visuals/burst_timeline_preview.jpg)
+[查看高清原图](Visual%20output/outputs_burst_timeline.png)
 
 ### 聚类时间线演化图
-![聚类时间线演化图](Visual%20output/outputs_timeline_view.png)
+![聚类时间线演化图](docs/assets/readme_visuals/timeline_view_preview.jpg)
+[查看高清原图](Visual%20output/outputs_timeline_view.png)
 
 ### 交互式网络图
 

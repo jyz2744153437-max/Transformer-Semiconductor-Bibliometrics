@@ -2,7 +2,7 @@
 
 > **TL;DR**：2015-2025 年，Transformer 架构在半导体制造领域的研究经历了"传统硬件主导→AI 方法渗透→Transformer 大爆发"三阶段技术演进。中国以 260 篇（40.4%）断层式领先，但奠基性工作仍由非中国机构完成。2024 年是关键历史拐点——vision transformers、ViT、SEM 等 6 个术语同步突现。前沿正从"已知缺陷分类"向"未知异常检测"升级。
 
-> **当前状态**：M3 终稿阶段（2026-05-16）。图谱分析已完成，L21-22 写作模块 8 项过程产出已补齐，manuscript 已具备 IMRAD 结构。当前以 `项目展示.html` 为主要展示页，并继续整理答辩与归档材料。
+> **当前状态**：✅ 答辩就绪（2026-06-06）。L25-28 课件6项交付物已补齐，HTML 主讲页 + PPT 备份 + AI 使用说明均已就位。详见 [presentation/](presentation/) 答辩材料、[docs/ai_usage.md](docs/ai_usage.md) AI 使用说明。
 
 ## 1. 项目简介
 
@@ -79,6 +79,8 @@ NOT TS=("power transformer" OR "voltage" OR "current transformer"
 ```
 Transformer-Semiconductor-Bibliometrics/
 ├── 项目展示.html                   # 交互式单页幻灯片（成果展示主页）
+├── final_package/                 # 最终提交包总入口（Lesson 27-28 闪检）
+│   └── README.md                  # 2分钟 GitHub 巡检打开顺序
 ├── CiteSpace分析套件/              # CiteSpace 复现包（数据+参数+操作步骤）
 ├── Data/                         # 原始数据
 │   ├── download_1-500.txt        # WoS 导出（第1批）
@@ -95,6 +97,8 @@ Transformer-Semiconductor-Bibliometrics/
 ├── docs/                         # 项目文档
 │   ├── project_outline.md        # 项目大纲
 │   ├── 第十四周GitHub巡检整改清单.md # Lesson 27-28 闪检对照
+│   ├── 最终答辩作战卡.md            # 6分钟答辩讲稿与问答分工
+│   ├── 图注7要素与3图1表清单.md      # 核心图表图注与RQ对照
 │   ├── query_rationale.md        # 检索设计思路
 │   ├── query_changelog.md        # 检索式变更日志
 │   ├── data_model.md             # 图数据模型
@@ -272,7 +276,25 @@ python run_pipeline.py
 | GLM-5.1 | 辅助分析 |
 | GPT-5.4 | 辅助分析 |
 
-## 10. 参考文献
+> 📋 **AI 使用完整说明**：[docs/ai_usage.md](docs/ai_usage.md)（按 L27-28 要求的结构化披露）
+
+## 10. GitHub 巡检自查（L27-28 标准）
+
+| 巡检项 | 要求 | 本项目位置 |
+|---|---|---|
+| 研究主题 | README 必须说明 | §1 项目简介 |
+| 团队分工 | 明确成员与角色 | §8 团队分工 + [docs/团队分工.md](docs/团队分工.md) |
+| 数据来源 | 数据库、检索式、日期 | §2 数据来源 |
+| 运行命令 | 可复现的环境与命令 | §7 快速复现 |
+| 输出说明 | 核心发现与可视化 | §5 核心发现 + §6 可视化产出 |
+| 参数文件 | 参数 + 选择理由 | [baseline/params.md](baseline/params.md) |
+| 检索文件 | Query as Code | [config/query.yaml](config/query.yaml) |
+| 代码复现 | requirements.txt + 至少1张图 | [requirements.txt](requirements.txt) + [run_pipeline.py](run_pipeline.py) |
+| 3图1表 | 最低图表要求 | §6 可视化产出 + [reports/milestone_selection.md](reports/milestone_selection.md) |
+| AI使用说明 | 工具、用途、人工核验 | [docs/ai_usage.md](docs/ai_usage.md) |
+| 答辩材料 | PPT/PDF 备份 | [presentation/](presentation/) |
+
+## 11. 参考文献
 
 ### 方法论文献
 1. Kleinberg J. Bursty and hierarchical structure in streams[J]. Data Mining and Knowledge Discovery, 2003, 7(4): 373-397.
@@ -289,4 +311,4 @@ python run_pipeline.py
 
 **项目展示网页**：https://jyz2744153437-max.github.io/Transformer-Semiconductor-Bibliometrics/
 
-**项目进度**：M3 终稿与 Release 进行中，详见 [PROGRESS.md](PROGRESS.md)
+**项目进度**：✅ 答辩就绪（2026-06-06），详见 [PROGRESS.md](PROGRESS.md) | [答辩作战卡](docs/最终答辩作战卡.md)

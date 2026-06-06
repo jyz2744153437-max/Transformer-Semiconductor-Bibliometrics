@@ -94,11 +94,16 @@ Transformer-Semiconductor-Bibliometrics/
 │   └── tool_selection.md         # 四层工具选型对照
 ├── docs/                         # 项目文档
 │   ├── project_outline.md        # 项目大纲
+│   ├── 第十四周GitHub巡检整改清单.md # Lesson 27-28 闪检对照
 │   ├── query_rationale.md        # 检索设计思路
 │   ├── query_changelog.md        # 检索式变更日志
 │   ├── data_model.md             # 图数据模型
 │   ├── cleaning_rules.md         # 数据清洗规则
 │   └── 团队分工.md                 # 团队分工说明
+├── presentation/                 # 答辩材料索引
+│   └── README.md                 # HTML 主讲材料与备份策略
+├── reflection/                   # 个人贡献与反思入口
+│   └── README.md                 # 分工、反思模板与材料索引
 ├── reports/                      # 分析报告
 │   ├── data_quality.md           # 数据质量报告（A级评级）
 │   ├── methodology.md            # 研究方法论

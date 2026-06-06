@@ -5,13 +5,13 @@
 
 ---
 
-## 1. 使用的 AI 工具一览
+## 1. 使用的 AI 与工具一览
 
 | 工具/模型 | 层级 | 版本/接入方式 | 用途 |
 |---|---|---|---|
 | Claude Code | AI IDE（对话式编程） | CLI + DeepSeek API | 项目总成：数据分析、Git 管理、文档撰写、质量自检 |
-| Codex (OpenAI) | AI Agent | ChatGPT Pro | 仓库梳理、HTML 展示页增强、课程补件整理、复现链排查 |
-| Gemini 3 Pro | AI Agent | Google AI Studio | HTML 开发（主体结构） |
+| Codex | AI Agent | gpt-5.5 | 仓库梳理、HTML 展示页增强、课程补件整理、复现链排查 |
+| Gemini 3 Pro | AI模型 | Google AI Studio | HTML 开发（主体结构） |
 | DeepSeek-v4-pro | 辅助模型 | API | 代码生成与优化 |
 | GLM-5.1 | 辅助模型 | API | 辅助分析 |
 | GPT-5.4 | 辅助模型 | API | 辅助分析 |

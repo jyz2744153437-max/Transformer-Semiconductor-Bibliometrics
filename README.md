@@ -270,13 +270,11 @@ python run_pipeline.py
 
 | 工具/模型 | 用途 |
 |---|---|
-| Claude Code (接入 DeepSeek API) | 项目总成与推进：数据分析、Git 管理、文档撰写 |
+| Claude Code × DeepSeek-v4-pro | 项目总成与推进：数据分析、Git 管理、文档撰写 |
+| Codex (gpt-5.5) | 后期优化主力：仓库梳理、HTML 展示页增强、课程补件整理、复现链排查、文案统一与局部重构 |
+| Gemini 3 Pro | HTML 相关开发 |
 | Claude Opus 4.7 | 演讲稿文案撰写 |
-| Codex (GPT-5.5) | 后期优化主力：仓库梳理、HTML 展示页增强、课程补件整理、复现链排查、文案统一与局部重构 |
-| Gemini 3 Pro | HTML 开发（主体） |
-| DeepSeek-v4-pro | 代码生成与优化 |
-| GLM-5.1 | 辅助分析 |
-| GPT-5.4 | 辅助分析 |
+
 
 > 📋 **AI 使用完整说明**：[docs/ai_usage.md](docs/ai_usage.md)（按 L27-28 要求的结构化披露）
 

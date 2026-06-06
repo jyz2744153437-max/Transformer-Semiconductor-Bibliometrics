@@ -271,6 +271,7 @@ python run_pipeline.py
 | 工具/模型 | 用途 |
 |---|---|
 | Claude Code (接入 DeepSeek API) | 项目总成与推进：数据分析、Git 管理、文档撰写 |
+| Claude Opus 4.7 | 演讲稿文案撰写 |
 | Codex (GPT-5.5) | 后期优化主力：仓库梳理、HTML 展示页增强、课程补件整理、复现链排查、文案统一与局部重构 |
 | Gemini 3 Pro | HTML 开发（主体） |
 | DeepSeek-v4-pro | 代码生成与优化 |

@@ -2,7 +2,7 @@
 
 > **TL;DR**：2015-2025 年，Transformer 架构在半导体制造领域的研究经历了"传统硬件主导→AI 方法渗透→Transformer 大爆发"三阶段技术演进。中国以 260 篇（40.4%）断层式领先，但奠基性工作仍由非中国机构完成。2024 年是关键历史拐点——vision transformers、ViT、SEM 等 6 个术语同步突现。前沿正从"已知缺陷分类"向"未知异常检测"升级。
 
-> **当前状态**：✅ 答辩就绪（2026-06-06）。L25-28 课件6项交付物已补齐，HTML 主讲页 + PPT 备份 + AI 使用说明均已就位。详见 [presentation/](presentation/) 答辩材料、[docs/ai_usage.md](docs/ai_usage.md) AI 使用说明。
+> **当前状态**：✅ 最终提交就绪（2026-06-28）。课程论文、最终版答辩 PPT、提交说明和四份个人贡献报告已整理到 [最终交付材料_文献计量学第二组/](最终交付材料_文献计量学第二组/)；GitHub Pages 继续作为线上展示与成果留档入口。
 
 ## 1. 项目简介
 
@@ -79,6 +79,7 @@ NOT TS=("power transformer" OR "voltage" OR "current transformer"
 ```
 Transformer-Semiconductor-Bibliometrics/
 ├── 项目展示.html                   # 交互式单页幻灯片（成果展示主页）
+├── 最终交付材料_文献计量学第二组/      # 课程最终提交包：说明、论文、PPT、个人报告
 ├── final_package/                 # 最终提交包总入口（Lesson 27-28 闪检）
 │   └── README.md                  # 2分钟 GitHub 巡检打开顺序
 ├── CiteSpace分析套件/              # CiteSpace 复现包（数据+参数+操作步骤）
@@ -135,8 +136,9 @@ Transformer-Semiconductor-Bibliometrics/
 │   ├── create_screening.py       # 筛选记录生成
 │   ├── metrics_calculator.*      # 指标计算
 │   └── visualize_pyvis.py        # Pyvis 交互式网络图生成
-├── paper/                        # 论文草稿
-│   └── manuscript_v1.md          # Mini Review 初稿
+├── paper/                        # 论文草稿与结构稿
+│   ├── manuscript_v1.md          # Mini Review 历史稿
+│   └── 课程论文_最终版_综述结构稿.md # 课程论文结构稿
 ├── 质量基准/                     # 项目质量参照标准
 │   ├── 分析报告v1.md             # 深度分析报告（评分 80→95+）
 │   └── 课程要求细则.md           # L1-L18 课件要求逐项对照
@@ -184,7 +186,7 @@ CiteSpace 在 DL 纯净集（147 篇）上识别 25 个突现词；其中 2024 �
 
 ### 5.6 聚类格局：AI 崛起与传统退场
 
-10 个 LLR 聚类中，AI 方向 4 个（#1 machine learning、#2 annotation、#3 defect detection、#8 cnn）全部活跃至 2025；传统硬件聚类 #4 inductors、#9 parallel processing 于 2022 年后系统性"学术死亡"。此消彼长的结构比单纯关键词频次增长更具说服力。
+10 个 LLR 聚类中，AI 方向 4 个（#1 machine learning、#2 annotation、#3 defect detection、#8 cnn）全部活跃至 2025；传统硬件聚类 #4 inductors、#9 parallel processing 于 2022 年后明显降温。此消彼长的结构比单纯关键词频次增长更具说服力。
 
 ### 5.7 核心指标
 
